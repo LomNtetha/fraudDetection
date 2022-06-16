@@ -1,0 +1,191 @@
+
+{% extends "../two_factor/_base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+{% include "dashboard/sideheader/side.html" %}
+
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            
+                            <h5 class="m-b-10">My Dashboard</h5>
+                            
+                   {% include "dashboard/include/message.html" %}
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#!">My Dashboard</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="row">
+           
+           
+            
+            <!-- prject ,team member start -->
+            <!-- seo start -->
+            <div class="col-xl-4 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <h4>M16,756</h4>
+                                <h6 class="text-muted m-b-0">subscribed plans<i class="fa fa-caret-down text-c-red m-l-10"></i></h6>
+                            </div>
+                            <div class="col-6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <h3>4</h3>
+                                <h6 class="text-muted m-b-0">Refered client<i class="fa fa-caret-up text-c-green m-l-10"></i></h6>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <h3>16</h3>
+                                <h6 class="text-muted m-b-0">my subscription plan<i class="fa fa-caret-down text-c-red m-l-10"></i></h6>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- seo end -->
+
+            <!-- Latest Customers start -->
+            <div class="col-lg-8 col-md-12">
+                <div class="card table-card review-card">
+                    <div class="card-header borderless ">
+                        <h5>Customer Reviews</h5>
+                        <div class="card-header-right">
+                            <div class="btn-group card-option">
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="feather icon-more-horizontal"></i>
+                                </button>
+                                <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
+                                    <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+                                    <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+                                    <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pb-0">
+                        <div class="review-block">
+                            <div class="row">
+                                <div class="col-sm-auto p-r-0">
+                                    <img src="assets/images/user/avatar-2.jpg" alt="user image" class="img-radius profile-img cust-img m-b-15">
+                                </div>
+                             
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-auto p-r-0">
+                                    <img src="assets/images/user/avatar-4.jpg" alt="user image" class="img-radius profile-img cust-img m-b-15">
+                                </div>
+                          
+                            </div>
+                        </div>
+                    </div>
+                </div>
+       
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="card chat-card">
+                    <div class="card-header">
+                        <h5>Chat</h5>
+                        <div class="card-header-right">
+                            <div class="btn-group card-option">
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="feather icon-more-horizontal"></i>
+                                </button>
+                                <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
+                                    <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+                                    <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+                                    <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row m-b-20 received-chat">
+                            <div class="col-auto p-r-0">
+                                <img src="assets/images/user/avatar-2.jpg" alt="user image" class="img-radius wid-40">
+                            </div>
+                            <div class="col">
+                                <div class="msg">
+                                    <p class="m-b-0">Nice to meet you!</p>
+                                </div>
+                                <p class="text-muted m-b-0"><i class="fa fa-clock-o m-r-10"></i>10:20am</p>
+                            </div>
+                        </div>
+                        <div class="row m-b-20 send-chat">
+                            <div class="col">
+                                <div class="msg">
+                                    <p class="m-b-0">Nice to meet you!</p>
+                                </div>
+                                <p class="text-muted m-b-0"><i class="fa fa-clock-o m-r-10"></i>10:20am</p>
+                            </div>
+                            <div class="col-auto p-l-0">
+                                <img src="assets/images/user/avatar-3.jpg" alt="user image" class="img-radius wid-40">
+                            </div>
+                        </div>
+                        <div class="row m-b-20 received-chat">
+                            <div class="col-auto p-r-0">
+                                <img src="assets/images/user/avatar-2.jpg" alt="user image" class="img-radius wid-40">
+                            </div>
+                            <div class="col">
+                                <div class="msg">
+                                    <p class="m-b-0">Nice to meet you!</p>
+                                    <img src="assets/images/widget/dashborad-1.jpg" alt="">
+                                    <img src="assets/images/widget/dashborad-3.jpg" alt="">
+                                </div>
+                                <p class="text-muted m-b-0"><i class="fa fa-clock-o m-r-10"></i>10:20am</p>
+                            </div>
+                        </div>
+                        <div class="input-group m-t-15">
+                            <input type="text" name="task-insert" class="form-control" id="Project" placeholder="Send message">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary">
+                                    <i class="feather icon-message-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Latest Customers end -->
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+</div>
+{% endblock %}

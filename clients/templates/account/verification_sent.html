@@ -1,0 +1,26 @@
+{% extends "../two_factor/_base.html" %}
+
+{% load i18n %}
+{% load static %}
+{% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
+
+{% block content %}
+<div class="auth-wrapper">
+	<div class="auth-content text-center">
+		<img src="{#%static 'clients/dashboard/assets/images/logo.png' %#}" alt="" class="img-fluid mb-4">
+		<div class="card borderless">
+			<div class="row align-items-center ">
+				<div class="col-md-12">
+					<div class="card-body">
+						
+						{% include "dashboard/include/message.html" %}
+    <h1>{% trans "Verify Your E-mail Address" %}</h1>
+
+    <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. If you do not see the verification e-mail in your main inbox, check your spam folder. Please contact us if you do not receive the verification e-mail within a few minutes.{% endblocktrans %}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

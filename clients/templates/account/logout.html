@@ -1,0 +1,35 @@
+{% extends "../two_factor/_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="auth-wrapper">
+	<div class="auth-content">
+		<img src="{#%static 'clients/dashboard/assets/images/logo.png' %#}" alt="" class="img-fluid mb-4">
+		<div class="card borderless">
+			<div class="row align-items-center ">
+				<div class="col-md-12">
+					<div class="card-body">
+
+
+<div class="text-center">
+<h1>{% trans "Sign Out" %}</h1>
+
+<p>{% trans 'Are you sure you want to sign out?' %}</p>
+
+<form method="post" action="">
+  {% csrf_token %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+  <button class="btn btn-dark" type="submit">{% trans 'Sign Out' %}</button>
+</form>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

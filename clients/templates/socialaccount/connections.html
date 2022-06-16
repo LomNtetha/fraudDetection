@@ -1,0 +1,109 @@
+{% extends "../two_factor/_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Account Connections" %}{% endblock %}
+{% block content %}
+
+{% include "dashboard/sideheader/side.html" %}
+
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+	<div class="pcoded-content">
+		<!-- [ breadcrumb ] start -->
+		<div class="page-header">
+			<div class="page-block">
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<div class="page-header-title">
+							<h5 class="m-b-10">Security</h5>
+						</div>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+							<li class="breadcrumb-item"><a href="#!">Two Factor Authentication</a></li>
+							<li class="breadcrumb-item"><a href="#!">Backup Tokens</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        
+                                <!-- [ horizontal-layout ] start -->
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            
+                                            <h1>{% trans "Account Connections" %}</h1>
+                                            <div class="card-header-right">
+                                                <div class="btn-group card-option">
+                                                    <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="feather icon-more-horizontal"></i>
+                                                    </button>
+                                                    <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                                        <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a>
+                                                        </li>
+                                                        <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+                                                        <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+                                                        <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                            
+                                                {% if form.accounts %}
+                                                <p>{% blocktrans %}You can sign in to your account using any of the following third party accounts:{% endblocktrans %}</p>
+                                            
+                                            
+                                                <form method="post" action="{% url 'socialaccount_connections' %}">
+                                                {% csrf_token %}
+                                            
+                                                <fieldset>
+                                                {% if form.non_field_errors %}
+                                                <div id="errorMsg">{{ form.non_field_errors }}</div>
+                                                {% endif %}
+                                            
+                                                {% for base_account in form.accounts %}
+                                                {% with base_account.get_provider_account as account %}
+                                                <div>
+                                                <label for="id_account_{{ base_account.id }}">
+                                                <input id="id_account_{{ base_account.id }}" type="radio" name="account" value="{{ base_account.id }}"/>
+                                                <span class="socialaccount_provider {{ base_account.provider }} {{ account.get_brand.id }}">{{account.get_brand.name}}</span>
+                                                -> {{ account }}
+                                                </label>
+                                                </div>
+                                                {% endwith %}
+                                                {% endfor %}
+                                            
+                                                <div class="my-2">
+                                                <button class="btn btn-dark" type="submit">{% trans 'Remove' %}</button>
+                                                </div>
+                                            
+                                                </fieldset>
+                                            
+                                                </form>
+                                            
+                                                {% else %}
+                                                <p>{% trans 'You currently have no social network accounts connected to this account.' %}</p>
+                                                {% endif %}
+                                            
+                                                <hr>
+                                                <h3>{% trans 'Add a 3rd Party Account' %}</h3>
+                                            
+                                                <div class="socialaccount_providers">
+                                                    {% include "socialaccount/snippets/provider_list.html" with process="connect" %}
+                                                </div>
+                                            
+                                                {% include "socialaccount/snippets/login_extra.html" %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- [ horizontal-layout ] end -->
+
+</div>
+</div>
+{% endblock %}

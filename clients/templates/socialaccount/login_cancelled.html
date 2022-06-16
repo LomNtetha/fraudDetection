@@ -1,0 +1,40 @@
+{% extends "socialaccount/base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block head_title %}{% trans "Login Cancelled" %}{% endblock %}
+{% block content %}
+
+{% include "dashboard/sideheader/side.html" %}
+
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+	<div class="pcoded-content">
+		<!-- [ breadcrumb ] start -->
+		<div class="page-header">
+			<div class="page-block">
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<div class="page-header-title">
+							<h5 class="m-b-10">Security</h5>
+						</div>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+							<li class="breadcrumb-item"><a href="#!">Two Factor Authentication</a></li>
+							<li class="breadcrumb-item"><a href="#!">Backup Tokens</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<h1>{% trans "Login Cancelled" %}</h1>
+
+{% url 'account_login' as login_url %}
+
+<p>{% blocktrans %}You decided to cancel logging in to our site using one of your existing accounts. If this was a mistake, please proceed to <a href="{{login_url}}">sign in</a>.{% endblocktrans %}</p>
+</div>
+</div>
+{% endblock %}

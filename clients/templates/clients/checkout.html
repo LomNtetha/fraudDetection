@@ -1,0 +1,122 @@
+{% extends "clients/base.html" %}
+{% load static %}
+{% load check_package %}
+{% load mathfilters %}	
+{% block content %}
+
+
+        <!-- Page Header Start -->
+        <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-1.jpg);">
+            <div class="container-fluid page-header-inner py-5">
+                <div class="container text-center pb-5">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Checkout</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">checkout</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+  <!-- Booking Start -->
+  
+<div class="container-xxl py-5">
+  <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
+	<div class="container">
+		<div class="bg-white shadow" style="padding: 35px;">
+			<div class="row g-2">
+				<div class="col-md-10">
+					<div class="row g-2">
+						<table class="table table-bordered">
+							<thead class="table-warning">
+								<tr>
+									<th>Plan</th>
+								
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<table class="table-bordered table">
+											<tr>
+												<th>Name</th>
+												<td>{{plan.title}}</td>
+											</tr>
+											<tr>
+												<th>Price</th>
+												<td>M{{plan.price}}</td>
+											</tr>
+										
+										
+										</table>
+									</td>
+									<td>
+										<ul class="list-unstyled">
+										  {% for feature in plan.subplanfeature_set.all %}
+											<li>{{feature.title}}</li>
+										{% endfor %}
+										</ul>
+									</td>
+									<td>
+										<table class="table table-bordered">
+											{% for discount in plan.plandiscount_set.all %}
+												<tr>
+													<td><input data-planprice="{{plan.price}}" data-discount="{{discount.total_discount}}" type="radio" id="validity{{discount.id}}" name="validity" class="select-validity" value="{{discount.total_months}}" /></td>
+													<th><label for="validity{{discount.id}}">{{discount.total_months}} Month</label></th>
+													<td>{{discount.total_discount}}%</td>
+												</tr>
+											{% endfor %}
+										</table>
+									</td>
+								</tr>
+							</tbody>
+							<tfoot class="table-info">
+								<tr>
+									<td></td>
+									<th>Total Amount</th>
+									<td><b>M<span class="totalAmount">{{plan.price}}</span></b></td>
+								</tr>
+								<tr>
+									<td colspan="2"></td>
+									<td>
+										<form method="post" action="{% url 'checkout_session' plan.id %}">
+											{% csrf_token %}
+											<input type="submit" value="Proceed to Payment" class="btn btn-primary" />
+										</form>
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+						
+					</div>
+				</div>
+	
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<!-- Booking End -->
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".select-validity").on('click',function(){
+			var _planPrice=$(this).attr('data-planprice');
+			var _planValid=$(this).val();
+			var _planDisc=$(this).attr('data-discount');
+			var _totalPrice=_planPrice*_planValid;
+			if(_planDisc>0){
+				var _calDisc=_totalPrice*_planDisc/100;
+				_calDisc=_totalPrice-_calDisc;
+			}else{
+				_calDisc=_planPrice;
+			}
+			$(".totalAmount").text(_calDisc);
+		});
+	});
+</script>
+
+{% endblock %}

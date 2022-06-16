@@ -1,0 +1,333 @@
+
+{% extends "../two_factor/_base.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+{% include "dashboard/sideheader/side.html" %}
+
+<!-- [ Main Content ] start -->
+<section class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Insurance Claims</h5>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="dashboard/"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="dashboard/">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Make claim</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+<!-- MultiStep Form -->
+<div class="row">
+    
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form id="msform" action="{% url 'multistepformexample_save' %}" method="post">
+            {% csrf_token %}
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active">Personal Details</li>
+                <li>Social Profiles</li>
+                <li>Account Setup</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset>
+                <h2 class="fs-title">Personal Details</h2>
+                <h3 class="fs-subtitle">Tell us something more about you</h3>
+        
+                    <div class="form-group">
+                        <label class="floating-label" for="Month"> Month</label>
+                      
+                        <select class="form-control" name="Month" id="Month">
+                                <option value=1>Jan</option>
+                                <option value=2>Feb</option>
+                                <option value=3>Mar</option>
+                                <option value=4>Apr</option>
+                                <option value=5>May</option>
+                                <option value=6>Jun</option>
+                                <option value=7>Jul</option>
+                                <option value=8>Aug</option>
+                                <option value=9>Sep</option>
+                                <option value=10>Oct</option>
+                                <option value=11>Nov</option>
+                                <option value=12>Dec</option>
+                        </select>
+                    </div>
+                
+         
+                    <div class="form-group">
+                        <label class="floating-label" for="WeekOfMonth">Week Of Month Accident Occured:</label>
+                        <input type="number" class="form-control"  id="WeekOfMonth" aria-describedby="emailHelp" value="">
+                    </div>
+                
+    
+                    <div class="form-group">
+                        <label class="floating-label" for="DayOfWeek">Day Of Week Accident Occured</label>
+                        
+                        <select class="form-control" name="DayOfWeek" id="DayOfWeek">
+                            <option value="1">Monday</option>
+                            <option value="2">Tuesday</option>
+                            <option value="3">Wesnday</option>
+                            <option value="4">Tuesday</option>
+                            <option value="5">Friday</option>
+                            <option value="6">Saturday</option>
+                            <option value="7">Sunday</option>
+                        </select>    
+                    </div>
+         
+               
+                    <div class="form-group">
+                        <label class="floating-label" for="Make">Manufacture of the car</label>
+                        <select class="form-control" name="Make" id="Make">
+                            <option value="1">Honda</option>
+                            <option value="2">Toyota</option>
+                            <option value="3">BMW</option>
+                            <option value="4">VW</option>
+                            <option value="5">Mazda</option>
+                            <option value="6">Mecedes</option>
+                            <option value="7">Nisson</option>
+                            <option value="8">Ford</option>
+                            <option value="9">Chevrolet</option>
+                            <option value="10">Jaguar</option>
+                            <option value="11">Lexus</option>
+                            <option value="12">Other</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="floating-label" for="AccidentArea">Accident Area</label>
+                        <select class="form-control" name="AccidentArea" id="AccidentArea">
+                            <option value="1">Urban</option>
+                            <option value="0">Rural</option>
+                        </select>   
+                    </div>
+                    <div class="form-group">
+                        <label class="floating-label" for="DayOfWeekClaimed">Day Of Week Claimed</label>
+                        <select class="form-control" name="DayOfWeekClaimed" id="DayOfWeekClaimed">
+                            <option value="1">Monday</option>
+                            <option value="2">Tuesday</option>
+                            <option value="3">Wesnday</option>
+                            <option value="4">Tuesday</option>
+                            <option value="5">Friday</option>
+                            <option value="6">Saturday</option>
+                            <option value="7">Sunday</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="floating-label" for="MonthClaimed">Month Claimed</label>
+                        <select class="form-control" name="MonthClaimed" id="MonthClaimed">
+                            <option value="1">Jan</option>
+                            <option value="2">Feb</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Apr</option>
+                            <option value="5">May</option>
+                            <option value="6">Jun</option>
+                            <option value="7">Jul</option>
+                            <option value="8">Aug</option>
+                            <option value="9">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dec</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="floating-label" for="WeekOfMonthClaimed"> Week Of Month Claimed</label>
+                        <input type="number" class="form-control" id="WeekOfMonthClaimed" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label class="floating-label" for="Sex">Policy Holder Gender</label>
+                        <select class="form-control" name="Sex" id="Sex">
+                            <option value="1">Female</option>
+                            <option value="0">Male</option>
+                        </select>    
+                    </div>
+                
+                <input type="button" name="next" class="next action-button" value="Next"/>
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">Social Profiles</h2>
+                <h3 class="fs-subtitle">Your presence on the social network</h3>
+                <div class="form-group">
+                    <label class="floating-label" for="MaritalStatus">Marital Status</label>
+                    <select class="form-control" name="MaritalStatus" id="MaritalStatus">
+                        <option value="1">Married</option>
+                        <option value="2">Single</option>
+                        <option value="3">Widow</option>
+                        <option value="4">Divorced</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="floating-label" for="Age">Age of Policy Holder</label>
+                    <input type="number" class="form-control" id="Age" placeholder="">
+
+                </div>
+            
+                <div class="form-group">
+                    <label class="floating-label" for="Fault">Who couse the Accident</label>
+                    <select class="form-control" name="Fault" id="Fault">
+                        <option value="1">Policy Holder</option>
+                        <option value="0">Third Party </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="floating-label" for="PolicyType"> Policy Type</label>
+                    <select class="form-control" name="PolicyType" id="PolicyType">
+                        <option value="1">Sedan All Perils</option>
+                        <option value="2">Sedan Collision</option>
+                        <option value="3">Sedan Liability</option>
+                        <option value="4">Sport All Perils</option>
+                        <option value="5">Sport Collision</option>
+                        <option value="6">Sport Liability</option>
+                        <option value="7"> Utility All Perils</option>
+                        <option value="8">Utility Collision</option>
+                        <option value="9">Utility Liability</option>
+                        <option value="10">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="floating-label" for="VehicleCategory">Vehicle Category</label>
+                    <select class="form-control" name="VehicleCategory" id="VehicleCategory">
+                        <option value="1">Sedan</option>
+                        <option value="2">Sport</option>
+                        <option value="3">Utility</option>
+                        <option value="4">Other</option>
+                    </select>    
+
+                </div>
+                <div class="form-group">
+                    <label class="floating-label" for="VehiclePrice">Vehicle Price</label>
+                    <select class="form-control" name="VehiclePrice" id="VehiclePrice">
+                        <option value="19999">Less than 20000</option>
+                        <option value="24500">Around 20000</option>
+                        <option value="34500">Around 30000</option>
+                        <option value="69001">More than 69000</option>
+                        <option value="49500">Between 40000 To 59000</option>
+                        <option value="64500">Around 60000</option>
+                    </select>    
+                </div>
+            
+                <div class="form-group">
+                    <label class="floating-label" for="PolicyNumber">Policy Number</label>
+                    <input type="number" class="form-control" id="PolicyNumber" aria-describedby="emailHelp" value="">
+                </div>
+                <div class="form-group">
+                    <label class="floating-label" for="RepNumber">Report Number</label>
+                    <input type="number" class="form-control" id="RepNumber" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label class="floating-label" for="Deductible">Deductible</label>
+                    <input type="number" class="form-control" id="Deductible" placeholder="">
+                </div>
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                <input type="button" name="next" class="next action-button" value="Next"/>
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">Create your account</h2>
+                <h3 class="fs-subtitle">Fill in your credentials</h3>
+                
+                    <div class="form-group">
+                        <label class="floating-label" for="DriverRating">Driver Rating</label>
+                        <input type="number" class="form-control" id="DriverRating" aria-describedby="emailHelp" value="">
+                    </div>
+                
+                    <div class="form-group">
+                        <label class="floating-label" for="Days_Policy_Accident">Days Policy Accident</label>
+                        <select class="form-control" name="Days_Policy_Accident" id="Days_Policy_Accident">
+                            <option value="4">Less than 7</option>
+                            <option value="11">More than 8 </option>
+                            <option value="22">More than 15</option>
+                            <option value="31">More than 30</option>
+                        </select> 
+                    </div>
+                
+                    <div class="form-group">
+                        <label class="floating-label" for="AgeOfVehicle">Age Of Vehicle</label>
+                        <select class="form-control" name="AgeOfVehicle" id="AgeOfVehicle">
+                            <option value="0">New</option>
+                            <option value="2">Two Years</option>
+                            <option value="3">Three Years</option>
+                            <option value="4">Four Years</option>
+                            <option value="5">Five years</option>
+                            <option value="6"> Six Years</option>
+                            <option value="7">Seven Years</option>
+                            <option value="8">More Than Seven Years</option>
+                        </select> 
+
+                    </div>
+                
+                    <div class="form-group">
+                        <label class="floating-label" for="PoliceReportFiled">Police Report Filed</label>
+                        <select class="form-control" name="PoliceReportFiled" id="PoliceReportFiled">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                
+                    <div class="form-group">
+                        <label class="floating-label" for="WitnessPresent">Witness Present</label>
+                        <select class="form-control" name="WitnessPresent" id="WitnessPresent">
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                
+                    <div class="form-group">
+                        <label class="floating-label" for="AgentType">Agent Type</label>
+                        <select class="form-control" name="AgentType" id="AgentType">
+                            <option value="1">External</option>
+                            <option value="0">Internal</option>
+                        </select>
+                    </div>
+              
+                    <div class="form-group">
+                        <label class="floating-label" for="NumberOfCars">Number Of Cars</label>
+                        <select class="form-control" name="NumberOfCars" id="NumberOfCars">
+                            <option value= 1 > One Vehicle</option>
+                            <option value= 2 >Two Vehicle </option>
+                            <option value= 4 >Three To Four</option>
+                            <option value= 7 >Five To Eight</option>
+                            <option value= 9 >More than Eight</option>
+                        </select>
+                    </div>
+                
+                    <div class="form-group">
+                        <label class="floating-label" for="Year">Year</label>
+                        <input type="number" class="form-control" id="Year" placeholder="">
+                    </div>
+              
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                 {% if messages %}
+                        {% for message in messages %}
+                            {% if message.tags == 'success' %}
+                                <div class="alert alert-success">{{ message }}</div>
+                            {% elif message.tags == 'error' %}
+                                <div class="alert alert-danger">{{ message }}</div>
+                            {% endif %}
+                        {% endfor %}
+                 {% endif %}
+            </div>
+        </div>
+</div>
+
+                    
+
+</body>
+</html>{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "two_factor/_base_focus.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% include "dashboard/sideheader/side.html" %}
+
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+	<div class="pcoded-content">
+		<!-- [ breadcrumb ] start -->
+		<div class="page-header">
+			<div class="page-block">
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<div class="page-header-title">
+						<h5>Security</h5>
+						</div>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+							<li class="breadcrumb-item"><a href="#!">Two Factor Authentication</a></li>
+							<li class="breadcrumb-item"><a href="#!">Backup Tokens</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+      <!-- [ horizontal-layout ] start -->
+      <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                
+  <h1>{% block title %}{% trans "Backup Tokens" %}{% endblock %}</h1>
+                <div class="card-header-right">
+                    <div class="btn-group card-option">
+                        <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="feather icon-more-horizontal"></i>
+                        </button>
+                        <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                            <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a>
+                            </li>
+                            <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+                            <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+                            <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info mb-0" role="alert">
+                    <p class="mb-0">{% blocktrans trimmed %}Backup tokens can be used when your primary and backup
+                      phone numbers aren't available. The backup tokens below can be used
+                      for login verification. If you've used up all your backup tokens, you
+                      can generate a new set of backup tokens. Only the backup tokens shown
+                      below will be valid.{% endblocktrans %}</p>
+                </div>
+                <p></p>
+            
+              {% if device.token_set.count %}
+                <ul>
+                  {% for token in device.token_set.all %}
+                    <li>{{ token.token }}</li>
+                  {% endfor %}
+                </ul>
+                <p>{% blocktrans %}Print these tokens and keep them somewhere safe.{% endblocktrans %}</p>
+              {% else %}
+                <p>{% trans "You don't have any backup codes yet." %}</p>
+              {% endif %}
+            
+              <form method="post">{% csrf_token %}{{ form }}
+                <a href="{% url 'two_factor:profile'%}"
+                   class="float-right btn btn-link">{% trans "Back to Account Security" %}</a>
+                <button class="btn btn-primary" type="submit">{% trans "Generate Tokens" %}</button>
+              </form>
+            </div>
+        </div>
+    </div>
+    <!-- [ horizontal-layout ] end -->
+
+  </div>
+  </div>
+{% endblock %}

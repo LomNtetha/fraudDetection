@@ -1,0 +1,76 @@
+{% extends "two_factor/_base_focus.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+{% include "dashboard/sideheader/side.html" %}
+
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+	<div class="pcoded-content">
+		<!-- [ breadcrumb ] start -->
+		<div class="page-header">
+			<div class="page-block">
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<div class="page-header-title">
+							<h5 class="m-b-10">Security</h5>
+						</div>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+							<li class="breadcrumb-item"><a href="#!">Two Factor Authentication</a></li>
+							<li class="breadcrumb-item"><a href="#!"></a>Enable Two-Factor Authentication</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		      <!-- [ horizontal-layout ] start -->
+			  <div class="col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h5>Horizontal layout</h5>
+						<div class="card-header-right">
+							<div class="btn-group card-option">
+								<button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="feather icon-more-horizontal"></i>
+								</button>
+								<ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+									<li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a>
+									</li>
+									<li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+									<li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+									<li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card-body">
+						<p>In Horizontal Layout V2 - Navigation bar is set in a Horizontal way with fixed width container. It also showing/hidden while scrolling up/down.</p>
+						<div class="alert alert-info mb-0" role="alert">
+							<p class="mb-0">It is best suited for those applications where you required your navigation is set to be a Horizontal way with fixed width container.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- [ horizontal-layout ] end -->
+  <h1>{% block title %}{% trans "Permission Denied" %}{% endblock %}</h1>
+
+  <p>{% blocktrans trimmed %}The page you requested, enforces users to verify using
+    two-factor authentication for security reasons. You need to enable these
+    security features in order to access this page.{% endblocktrans %}</p>
+
+  <p>{% blocktrans trimmed %}Two-factor authentication is not enabled for your
+    account. Enable two-factor authentication for enhanced account
+    security.{% endblocktrans %}</p>
+  <p>
+    <a href="javascript:history.go(-1)"
+       class="float-right btn btn-link">{% trans "Go back" %}</a>
+    <a href="{% url 'two_factor:setup' %}" class="btn btn-primary">
+    {% trans "Enable Two-Factor Authentication" %}</a>
+  </p>
+  </div>
+  </div>
+{% endblock %}

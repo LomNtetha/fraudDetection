@@ -1,0 +1,269 @@
+{% load static %}
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+      <title>{% block head_title %}{% endblock %}</title>
+      <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 11]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+      <!-- Meta -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="description" content="" />
+      <meta name="keywords" content="">
+      <meta name="author" content="Phoenixcoded" />
+      <!-- Favicon icon -->
+      <link rel="icon" href="{% static 'clients/dashboard/assets/images/favicon.ico' %}" type="image/x-icon">
+  
+      <!-- vendor css -->
+      <link rel="stylesheet" href="{% static 'clients/dashboard/assets/css/style.css' %}">
+      
+      
+  
+
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">-->
+    <style>
+      .form-group {
+        margin-top: 10px;
+      }
+
+    
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+    </style>
+    {% block extra_head %}
+    {% endblock %}
+  </head>
+  <body>
+   
+    
+
+   <!--<div class="p-3 mb-3 bg-dark">
+      <div class="container d-flex justify-content-between">
+          {% if user.is_authenticated %}
+          <div><a class="text-light" href="{#% url 'account_email' %#}">Change E-mail</a></div>
+          <div><a class="text-light" href="{#% url 'home' %#}">Home</a></div>
+          <div><a class="text-light" href="{#% url 'account_logout' %#}">Sign Out</a></div>
+          {% else %}
+          <div><a class="text-light" href="#% url 'two_factor:login' %#}">Sign In</a></div>
+          <div><a class="text-light" href="{#% url 'account_signup' %#}">Sign Up</a></div>
+          {% endif %} 
+          
+      </div>
+    </div>-->
+    {% block content %}
+
+     
+    
+<!--<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <script defer src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>-->
+ 
+  {% block content_wrapper %}
+    <div class="container">
+      {% block sub_content %}{% endblock %}
+    </div>
+  {% endblock %}
+  <!--
+</body>
+</html>-->
+
+
+{% endblock %}
+    {% block extra_body %}
+    {% endblock %}
+<!--
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  </body>
+</html>-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Required Js -->
+    <script src="{% static 'clients/dashboard/assets/js/vendor-all.min.js' %}"></script>
+    <script src="{% static 'clients/dashboard/assets/js/plugins/bootstrap.min.js' %}"></script>
+    
+    
+    <script src="{% static 'clients/dashboard/assets/js/pcoded.js' %}"></script>
+
+<!-- Apex Chart -->
+<script src="{% static 'clients/dashboard/assets/js/plugins/apexcharts.min.js' %}"></script>
+
+
+<!-- custom-chart js -->
+<script src="{% static 'clients/dashboard/assets/js/pages/dashboard-main.js' %}"></script>
+    
+
+<script>
+  $(document).on('submit', '#post-form',function(e){
+      e.preventDefault();
+      $.ajax({
+          type:'POST',
+          url:'{% url "submit_prediction" %}',
+          data:{
+              Month:$('#Month').val(),
+              WeekOfMonth:$('#WeekOfMonth').val(),
+              DayOfWeek:$('#DayOfWeek').val(),
+              Make:$('#Make').val(),
+              AccidentArea:$('#AccidentArea').val(),
+              DayOfWeekClaimed:$('#DayOfWeekClaimed').val(),
+              MonthClaimed:$('#MonthClaimed').val(),
+              WeekOfMonthClaimed:$('#WeekOfMonthClaimed').val(),
+              Sex:$('#Sex').val(),
+              MaritalStatus:$('#MaritalStatus').val(),
+              Age:$('#Age').val(),
+              Fault:$('#Fault').val(),
+              PolicyType:$('#PolicyType').val(),
+              VehicleCategory:$('#VehicleCategory').val(),
+              VehiclePrice:$('#VehiclePrice').val(),
+              PolicyNumber:$('#PolicyNumber').val(),
+              RepNumber:$('#RepNumber').val(),
+              Deductible:$('#Deductible').val(),
+              DriverRating:$('#DriverRating').val(),
+              Days_Policy_Accident:$('#Days_Policy_Accident').val(),
+              AgeOfVehicle:$('#AgeOfVehicle').val(),
+              PoliceReportFiled:$('#PoliceReportFiled').val(),
+              WitnessPresent:$('#WitnessPresent').val(),
+              AgentType:$('#AgentType').val(),
+              NumberOfCars:$('#NumberOfCars').val(),
+              Year:$('#Year').val(),
+              csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+              action: 'post'
+          },
+          success:function(json) {
+              document.forms["post-form"].reset();
+              document.getElementById("prediction").innerHTML = json['result']
+              document.getElementById("mh").innerHTML = json['Month']
+              document.getElementById("wm").innerHTML = json['WeekOfMonth']
+              document.getElementById("dw").innerHTML = json['DayOfWeek']
+              document.getElementById("me").innerHTML = json['Make']
+              document.getElementById("aa").innerHTML = json['AccidentArea']
+              document.getElementById("dc").innerHTML = json['DayOfWeekClaimed']
+              document.getElementById("mc").innerHTML = json['MonthClaimed']
+              document.getElementById("wc").innerHTML = json['WeekOfMonthClaimed']
+              document.getElementById("sx").innerHTML = json['Sex']
+              document.getElementById("ms").innerHTML = json['MaritalStatus']
+              document.getElementById("ae").innerHTML = json['Age']
+              document.getElementById("ft").innerHTML = json['Fault']
+              document.getElementById("pt").innerHTML = json['PolicyType']
+              document.getElementById("vc").innerHTML = json['VehicleCategory']
+              document.getElementById("vp").innerHTML = json['VehiclePrice']
+              document.getElementById("pn").innerHTML = json['PolicyNumber']
+              document.getElementById("rn").innerHTML = json['RepNumber']
+              document.getElementById("de").innerHTML = json['Deductible']
+              document.getElementById("dr").innerHTML = json['DriverRating']
+              document.getElementById("da").innerHTML = json['Days_Policy_Accident']
+              document.getElementById("av").innerHTML = json['AgeOfVehicle']
+              document.getElementById("pr").innerHTML = json['PoliceReportFiled']
+              document.getElementById("wp").innerHTML = json['WitnessPresent']
+              document.getElementById("at").innerHTML = json['AgentType']
+              document.getElementById("nc").innerHTML = json['NumberOfCars']
+              document.getElementById("yr").innerHTML = json['Year']
+            
+          },
+          error : function(xhr,errmsg,err) {
+
+          }  
+      });
+  })
+  
+  $(document).on('submit', '#post-form',function(e){
+    e.preventDefault();
+    $.ajax({
+        type:'POST',
+        url:'{% url "submit_prediction" %}',
+        data:{
+            sepal_length:$('#sepal_length').val(),
+            sepal_width:$('#sepal_width').val(),
+            petal_length:$('#petal_length').val(),
+            petal_width:$('#petal_width').val(),
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            action: 'post'
+        },
+        success:function(json) {
+            document.forms["post-form"].reset();
+            document.getElementById("prediction").innerHTML = json['result']
+           document.getElementById("sl").innerHTML = json['sepal_length']
+            document.getElementById("sw").innerHTML = json['sepal_width']
+            document.getElementById("pl").innerHTML = json['petal_length']
+            document.getElementById("pw").innerHTML = json['petal_width']
+        },
+        error : function(xhr,errmsg,err) {
+
+        }
+    });
+})
+
+
+</script>
+</body>
+
+</html>
+   
