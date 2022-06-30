@@ -129,13 +129,13 @@ def pay_success(request):
         user=user,
         price=plan.price,
     )
-    subject='Order Email'
-    html_content=get_template('clients/orderemail.html').render({'title':plan.name})
-    from_email='ntethalumkile@gmail.com'
+    #subject='Order Email'
+    #html_content=get_template('clients/orderemail.html').render({'title':plan.name})
+   # from_email='ntethalumkile@gmail.com'
 
-    msg = EmailMessage(subject, html_content, from_email, ['lumkilentetha878@gmail.com'])
-    msg.content_subtype = "html"  # Main content is now text/html
-    msg.send()
+    #msg = EmailMessage(subject, html_content, from_email, ['lumkilentetha878@gmail.com'])
+    #msg.content_subtype = "html"  # Main content is now text/html
+    #msg.send()
 
     return render(request, 'clients/success.html')
 

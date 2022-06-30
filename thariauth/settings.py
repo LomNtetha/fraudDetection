@@ -66,6 +66,7 @@ INSTALLED_APPS = [
  #'channels_redi
   'admin_honeypot',
  #'django-cryptography',
+   "debug_toolbar",
  
 
 ]    
@@ -88,6 +89,7 @@ MIDDLEWARE = [
     'request.middleware.RequestMiddleware',
     #Add ploptly dash middleware
    #'django_plotly_dash.middleware.BaseMiddleware'  
+   "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'thariauth.urls'
@@ -107,7 +109,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                'manager.context_processor.menu'
             ],
-             'libraries':{
+            'libraries':{
             'check_package': 'clients.templatetags.check_package',
             'manager_tags': 'manager.templatetags.manager_tags',
             
@@ -122,10 +124,21 @@ WSGI_APPLICATION = 'thariauth.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.sqlite3',
+   #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #}
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'THARIAUTH',
+        'HOST': '127.0.0.1',
+        'PORT': '3360',
+        'USER': 'root',
+        'PASSWORD': '50899604',
     }
 }
 
@@ -232,7 +245,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST_USER = "ntethalumkile@gmail.com"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+#EMAIL_USE_TLS = True
 EMAIL_HOST_PASSWORD = "50899604"
 
 ACCOUNT_EMAIL_VERIFICATION ="mandatory"
@@ -248,7 +261,7 @@ ACCOUNT_AUTHENTICATION_METHOD =  "username_email"
 #forcing cutomer to login using email
 ACCOUNT_EMAIL_REQUIRED = True
 #settings the username to be Uppercases
-ACCOUNT_PRESERVE_USERNAME_CASING = False
+#ACCOUNT_PRESERVE_USERNAME_CASING = False
 #Automatically login after email confirmation
 #ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL=True
 
@@ -263,7 +276,7 @@ Setttiings for two factor Authentication
 """
 LOGIN_URL = 'two_factor:login'
 
-LOGOUT_REDIRECT_URL='two_factor:login'
+LOGOUT_REDIRECT_URL='index'
 
 TWO_FACTOR_PATCH_ADMIN=False
 
@@ -436,3 +449,8 @@ ASGI_APPLICATION = 'thariauth.routing.application'
 #CRYPTOGRAPHY_DIGEST = 'cryptography.hazmat.primitives.hashes.SHA256',
 #CRYPTOGRAPHY_KEY = 'CRYPTOGRAPHY_KEY',
 #CRYPTOGRAPHY_SALT = 'django-cryptography',
+INTERNAL_IPS = [
+    # ...
+    #"127.0.0.1",
+    # ...
+]

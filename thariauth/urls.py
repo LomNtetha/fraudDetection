@@ -29,6 +29,8 @@ urlpatterns = [
      #path('accounts/',TemplateView.as_view(Template_name="account/login")),
     #re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
      #re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
+     path('__debug__/', include('debug_toolbar.urls')),  
+
 
       
       
