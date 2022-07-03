@@ -20,10 +20,10 @@ urlpatterns = [
      #Alluth
      path('accounts/', include('allauth.urls')),
      path('', include('clients.urls')),
-     path('agent/', include('agent.urls')),
+    # path('agent/', include('agent.urls')),
      path('manager/', include('manager.urls')),
      path('manager/', TemplateView.as_view(template_name="index.html")),
-     path('marketing/', include('marketing.urls')),
+     #path('marketing/', include('marketing.urls')),
      #Twilio client URL
      path('', include(tf_twilio_urls)),
      #path('accounts/',TemplateView.as_view(Template_name="account/login")),

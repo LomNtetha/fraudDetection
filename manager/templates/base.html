@@ -22,16 +22,15 @@
     <link rel="stylesheet" type="text/css"
           href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
-
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/themes/prism.css"/>
+<!--
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/themes/prism.css"/>-->
          <!-- Favicon icon -->
          <link rel="icon" href="{% static 'manager/assets/images/favicon.ico' %}" type="image/x-icon">
-         <!-- Google font-->
+         <!-- Google font
          <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
-         <!-- waves.css -->
-         <link rel="stylesheet" href="{% static 'manager/assets/pages/waves/css/waves.min.css' %}" type="text/css" media="all">
+    -->
            <!-- Required Fremwork -->
-           <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/css/bootstrap/css/bootstrap.min.css '%}">
+           <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/css/bootstrap/css/bootstrap.min.css' %}">
            
            <!-- waves.css -->
            <link rel="stylesheet" href="{% static 'manager/assets/pages/waves/css/waves.min.css' %}" type="text/css" media="all">
@@ -41,26 +40,16 @@
            <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/icon/font-awesome/css/font-awesome.min.css' %}">
            <!-- scrollbar.css -->
            <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/css/jquery.mCustomScrollbar.css' %}">
-             <!-- am chart export.css 
-             <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css' %}" type="text/css" media="all" />-->
            <!-- Style.css -->
            <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/css/style.css' %}">
-     
-          
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/themes/prism-twilight.css"
-          integrity="sha256-Rl83wx+fN2p2ioYpdvpWxuhAbxj+/7IwaZrKQBu/KQE=" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/prism.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-
+    
     {% block extra_css %}
     {% endblock %}
 
 </head>
 
 <body>
-     <!-- Pre-loader start
+     <!-- Pre-loader start-->
   <div class="theme-loader">
     <div class="loader-track">
         <div class="preloader-wrapper">
@@ -112,7 +101,7 @@
             </div>
         </div>
     </div>
-</div>-->
+</div>
 <!--Pre-loader end -->
 <div id="pcoded" class="pcoded">
     <div class="pcoded-overlay-box"></div>
@@ -196,7 +185,7 @@
                                 </li>
                                 <li class="waves-effect waves-light">
                                     <div class="media">
-                                        <img class="d-flex align-self-center img-radius" src="{% static 'manager/assets/images/avatar-3.jpg' %}" alt="Generic placeholder image">
+                                        <img class="d-flex align-self-center img-radius" src="{% static 'manager/assets/images/user/tharilogo.jpg' %}" alt="Generic placeholder image">
                                         <div class="media-body">
                                             <h5 class="notification-user">Tumelo Mokobocho</h5>
                                             <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -275,12 +264,13 @@
                         <div class="p-15 p-b-0">
                             <form class="form-material">
                                 <div class="form-group form-primary">
-                                    <input type="text" name="footer-email" class="form-control" required="">
                                     <span class="form-bar"></span>
-                                    <label class="float-label"><i class="fa fa-search m-r-10"></i>Search Friend</label>
+                                    
+                            <div class="sidebar-heading">Analytics Report</div>
                                 </div>
                             </form>
                         </div>
+                        
                         <ul class="pcoded-item pcoded-left-item">
                             <li class="active">
                                 <a href="index.html" class="waves-effect waves-dark">
@@ -289,25 +279,67 @@
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             </li>
-                             <!-- Sidebar -->
-                         <div class="bg-light border-right" id="sidebar-wrapper">
-                           <div class="sidebar-heading">Analytics Report</div>
-                            <div class="list-group list-group-flush">
-                                <ul>
-                                <li class="list-group-item"><a href="{% url 'group-by' %}"><i class="feather icon-user m-r-5"></i>Total Sales per Policy</a></li>
-                                <li class="list-group-item"><a href="{% url 'group-by-chart' %}"><i class="feather icon-settings m-r-5"></i>Total Number of Policy</a></li>
-                                <li class="list-group-item"><a href="{% url 'group-by-with-several-charts' %}"><i class="feather icon-log-out m-r-5"></i>Different Charts For Policy</a></li>
+                            <ul class="pcoded-item pcoded-left-item">
                                 
-                                <li class="list-group-item"><a href="{% url 'group-by-date' %}"><i class="feather icon-user m-r-5"></i>Login Analysis</a></li>
-                                <li class="list-group-item"><a href="{% url 'time-series' %}"><i class="feather icon-settings m-r-5"></i>Number of Policy Sold</a></li>
-                                <li class="list-group-item"><a href="{% url 'time-series-charts' %}"><i class="feather icon-log-out m-r-5"></i>Analysis of Policy Per Month</a></li>
-                                
-                                <li class="list-group-item"><a href="{% url 'time-series-without-group-by' %}"><i class="feather icon-log-out m-r-5"></i>Total Sales Per Month</a></li>
-                                </ul>
+                                <li class="list-group-item py-3 ">
+                                    <a href="{% url 'group-by-with-several-charts' %}" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext" data-i18n="{% url 'group-by-chart' %}">Different Policy Charts</span>
+                                        
+                                        
+                                    </a>
+                                </li>
+                                <li class="list-group-item py-3">
+                                    <a href="{% url 'group-by-chart' %}" class="waves-effect waves-dark"><i class="feather icon-settings m-r-5"></i>
+                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext" data-i18n="{% url 'group-by-chart' %}">Total Number of Policy</span>
+                                        
+                                    </a>
+                                </li>
+                                <li class="list-group-item py-3">
+                                    <a href="{% url 'group-by' %}" class="waves-effect waves-dark"><i class="feather icon-settings m-r-5"></i>
+                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext" data-i18n="{% url 'group-by-chart' %}">Total Sales per Policy</span>
+                                        
+                                        
+                                    </a>
+                                </li>
+                              
+                                <li class="list-group-item py-3">
+                                    <a href="{% url 'group-by-date' %}" class="waves-effect waves-dark"><i class="feather icon-settings m-r-5"></i>
+                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext" data-i18n="{% url 'group-by-chart' %}">Login Analysis</span>
+                                        
+                                        
+                                    </a>
+                                </li>
+                                <li class="list-group-item py-3">
+                                    <a href="{% url 'group-by-chart' %}" class="waves-effect waves-dark"><i class="feather icon-settings m-r-5"></i>
+                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext" data-i18n="{% url 'time-series' %}">Number of Policy Sold</span>
 
-                                    </div>
-                                </div>
-                          <!-- /#sidebar-wrapper -->
+                                        
+                                
+                                        
+                                    </a>
+                                </li>
+                                <li class="list-group-item py-3">
+                                    <a href="{% url 'time-series-charts' %}" class="waves-effect waves-dark"><i class="feather icon-settings m-r-5"></i>
+                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext" data-i18n="{% url 'group-by-chart' %}">Policy Per Month</span>
+                                        
+                                    </a>
+                                </li>
+                                <li class="list-group-item py-3 ">
+                                    <a href="{% url 'group-by-chart' %}" class="waves-effect waves-dark"><i class="feather icon-settings m-r-5"></i>
+                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext" data-i18n="{% url 'time-series-without-group-by' %}">Total Sales Per Month</span>
+                                        
+                                        
+                                    </a>
+                                </li>
+                            </ul>
+                        
                         </ul>
                 </nav>
                 <!--/ End of sidebar-->
@@ -356,31 +388,23 @@
 </div>
 <!-- /#wrapper -->
 
-<!-- Bootstrap core JavaScript -->
-
-<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    
+{% block js_script %}
+{% endblock %}
+<script type="text/javascript" src="{% static 'manager/assets/js/jquery-ui/jquery-ui.min.js ' %}"></script>
+<script type="text/javascript" src="{% static 'manager/assets/js/popper.js/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'manager/assets/js/bootstrap/js/bootstrap.min.js' %} "></script>
+<script type="text/javascript" src="{% static 'manager/assets/pages/widget/excanvas.js ' %}"></script>
 
 {#DatePicker #}
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
 
-
-<!-- Menu Toggle Script -->
-<script src="{% static 'slick_reporting/main.js' %}"></script>
-<script src="{% static 'slick_reporting/ra.highchart.js' %}"></script>
-<script src="{% static 'slick_reporting/ra.chartsjs.js' %}"></script>
-
-
-<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet"/>
+<!--<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet"/>-->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"
         integrity="JnbsSLBmv2/R0fUmF2XYIcAEMPHEAO51Gitn9IjL4l89uFTIgtLF1+jqIqqd9FSk"
         crossorigin="anonymous"></script>
-
-
-        
-{% block js_script %}
-{% endblock %}
 
 <script type="text/javascript" src="{% static 'manager/assets/js/jquery-slimscroll/jquery.slimscroll.js' %} "></script>
 <!-- modernizr js -->
@@ -390,30 +414,18 @@
 <script src="{% static 'manager/assets/js/jquery.mCustomScrollbar.concat.min.js ' %}"></script>
 <script src="{% static 'manager/assets/js/pcoded.min.js' %}"></script>
 <script src="{% static 'manager/assets/js/vertical-layout.min.js' %} "></script>
-<!-- custom js 
-<script type="text/javascript" src="{% static 'manager/assets/pages/dashboard/custom-dashboard.js' %}"></script>-->
+<!-- custom js--> 
+<script type="text/javascript" src="{% static 'manager/assets/pages/dashboard/custom-dashboard.js' %}"></script>
 <script type="text/javascript" src="{% static 'manager/assets/js/script.js' %} "></script>
 
  
-    <!-- Required Jquery 
-    <script type="text/javascript" src="{% static 'manager/assets/js/jquery/jquery.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'manager/assets/js/jquery-ui/jquery-ui.min.js ' %}"></script>
-    <script type="text/javascript" src="{% static 'manager/assets/js/popper.js/popper.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'manager/assets/js/bootstrap/js/bootstrap.min.js' %} "></script>
-    <script type="text/javascript" src="{% static 'manager/assets/pages/widget/excanvas.js ' %}"></script>-->
     <!-- waves js >-->
     <!-- jquery slimscroll js 
-    <script src="{% static 'manager/assets/pages/waves/js/waves.min.js' %}"></script>-->
-    <!-- Chart js 
-    <script type="text/javascript" src="{% static 'manager/assets/js/chart.js/Chart.js' %}"></script>-->
-    <!-- amchart js 
-    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-    <script src="{% static 'manager/assets/pages/widget/amchart/gauge.js' %}"></script>
-    <script src="{% static 'manager/assets/pages/widget/amchart/serial.js' %}"></script>
-    <script src="{% static 'manager/assets/pages/widget/amchart/light.js' %}"></script>
-    <script src="{% static 'manager/assets/pages/widget/amchart/pie.min.js' %}"></script>
-    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js' %}"></script>-->
-    <!-- menu js -->
+    <script src="{% static 'manager/assets/pages/waves/js/waves.min.js' %}"></script>
+     
+    <script type="text/javascript" src="{% static 'manager/assets/js/chart.js/Chart.js' %}"></script>
+  -->
+ 
  
 </body>
 

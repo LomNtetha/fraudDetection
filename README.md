@@ -12,8 +12,6 @@ the clients only and only if that client recognized as legitemate. The system wi
 7.3 py -m pip install phonenumbers
 8.4 py -m pip install twilio
 9.5 py -m pip install stripe
-10.6 py -m pip insatll djsripe
 11. configure database to your desired database . please note this system uses MySQL
 12. py manage.py makemigrations
 13. py manage.py migrate
-14. py sysnc _djstripe

@@ -26,9 +26,9 @@ All apps that are used by the system installed here
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'clients.apps.ClientsConfig',
-    'agent.apps.AgentConfig',
+   # 'agent.apps.AgentConfig',
     'manager.apps.ManagerConfig',
-    'marketing.apps.MarketingConfig',
+    #'marketing.apps.MarketingConfig',
     
   #'accounts.apps.AccountsConfig',
  
@@ -66,6 +66,7 @@ INSTALLED_APPS = [
  #'channels_redi
   'admin_honeypot',
  #'django-cryptography',
+  'import_export',
    "debug_toolbar",
  
 

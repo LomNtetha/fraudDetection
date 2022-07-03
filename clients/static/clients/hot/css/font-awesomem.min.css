@@ -1,0 +1,482 @@
+/*!
+ * Font Awesome Free 5.10.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+
+.fa,
+.fab {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1
+}
+
+.fa-lg {
+    font-size: 1.33333em;
+    line-height: .75em;
+    vertical-align: -.0667em
+}
+
+.fa-sm {
+    font-size: .875em
+}
+
+.fa-1x {
+    font-size: 1em
+}
+
+.fa-2x {
+    font-size: 2em
+}
+
+.fa-3x {
+    font-size: 3em
+}
+
+.fa-4x {
+    font-size: 4em
+}
+
+.fa-5x {
+    font-size: 5em
+}
+
+.fa-6x {
+    font-size: 6em
+}
+
+.fa-7x {
+    font-size: 7em
+}
+
+.fa-8x {
+    font-size: 8em
+}
+
+.fa-9x {
+    font-size: 9em
+}
+
+.fa-10x {
+    font-size: 10em
+}
+
+.fa-fw {
+    text-align: center;
+    width: 1.25em
+}
+
+.fa-ul {
+    list-style-type: none;
+    margin-left: 2.5em;
+    padding-left: 0
+}
+
+.fa-ul>li {
+    position: relative
+}
+
+.fa-li {
+    left: -2em;
+    position: absolute;
+    text-align: center;
+    width: 2em;
+    line-height: inherit
+}
+
+.fa-border {
+    border: .08em solid #eee;
+    border-radius: .1em;
+    padding: .2em .25em .15em
+}
+
+@-webkit-keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+.fa-500px:before {
+    content: "\f26e"
+}
+
+.fa-align-center:before {
+    content: "\f037"
+}
+
+.fa-align-justify:before {
+    content: "\f039"
+}
+
+.fa-align-right:before {
+    content: "\f038"
+}
+
+.fa-arrow-right:before {
+    content: "\f061"
+}
+
+.fa-arrow-up:before {
+    content: "\f062"
+}
+
+.fa-bath:before {
+    content: "\f2cd"
+}
+
+.fa-bold:before {
+    content: "\f032"
+}
+
+.fa-bootstrap:before {
+    content: "\f836"
+}
+
+.fa-border-all:before {
+    content: "\f84c"
+}
+
+.fa-border-none:before {
+    content: "\f850"
+}
+
+.fa-border-style:before {
+    content: "\f853"
+}
+
+.fa-car:before {
+    content: "\f1b9"
+}
+
+.fa-car-alt:before {
+    content: "\f5de"
+}
+
+.fa-code:before {
+    content: "\f121"
+}
+
+.fa-cog:before {
+    content: "\f013"
+}
+
+.fa-copy:before {
+    content: "\f0c5"
+}
+
+.fa-copyright:before {
+    content: "\f1f9"
+}
+
+.fa-css3:before {
+    content: "\f13c"
+}
+
+.fa-css3-alt:before {
+    content: "\f38b"
+}
+
+.fa-d-and-d:before {
+    content: "\f38d"
+}
+
+.fa-dumbbell:before {
+    content: "\f44b"
+}
+
+.fa-envelope:before {
+    content: "\f0e0"
+}
+
+.fa-envelope-square:before {
+    content: "\f199"
+}
+
+.fa-expand:before {
+    content: "\f065"
+}
+
+.fa-facebook:before {
+    content: "\f09a"
+}
+
+.fa-facebook-f:before {
+    content: "\f39e"
+}
+
+.fa-facebook-square:before {
+    content: "\f082"
+}
+
+.fa-font:before {
+    content: "\f031"
+}
+
+.fa-font-awesome:before {
+    content: "\f2b4"
+}
+
+.fa-font-awesome-alt:before {
+    content: "\f35c"
+}
+
+.fa-glass-cheers:before {
+    content: "\f79f"
+}
+
+.fa-google:before {
+    content: "\f1a0"
+}
+
+.fa-google-play:before {
+    content: "\f3ab"
+}
+
+.fa-h-square:before {
+    content: "\f0fd"
+}
+
+.fa-home:before {
+    content: "\f015"
+}
+
+.fa-hotel:before {
+    content: "\f594"
+}
+
+.fa-html5:before {
+    content: "\f13b"
+}
+
+.fa-icons:before {
+    content: "\f86d"
+}
+
+.fa-image:before {
+    content: "\f03e"
+}
+
+.fa-images:before {
+    content: "\f302"
+}
+
+.fa-info:before {
+    content: "\f129"
+}
+
+.fa-instagram:before {
+    content: "\f16d"
+}
+
+.fa-js:before {
+    content: "\f3b8"
+}
+
+.fa-js-square:before {
+    content: "\f3b9"
+}
+
+.fa-link:before {
+    content: "\f0c1"
+}
+
+.fa-linkedin:before {
+    content: "\f08c"
+}
+
+.fa-linkedin-in:before {
+    content: "\f0e1"
+}
+
+.fa-list:before {
+    content: "\f03a"
+}
+
+.fa-list-alt:before {
+    content: "\f022"
+}
+
+.fa-list-ul:before {
+    content: "\f0ca"
+}
+
+.fa-long-arrow-alt-right:before {
+    content: "\f30b"
+}
+
+.fa-long-arrow-alt-up:before {
+    content: "\f30c"
+}
+
+.fa-map:before {
+    content: "\f279"
+}
+
+.fa-map-marker:before {
+    content: "\f041"
+}
+
+.fa-map-marker-alt:before {
+    content: "\f3c5"
+}
+
+.fa-marker:before {
+    content: "\f5a1"
+}
+
+.fa-npm:before {
+    content: "\f3d4"
+}
+
+.fa-phone:before {
+    content: "\f095"
+}
+
+.fa-phone-alt:before {
+    content: "\f879"
+}
+
+.fa-phone-square:before {
+    content: "\f098"
+}
+
+.fa-phone-square-alt:before {
+    content: "\f87b"
+}
+
+.fa-play:before {
+    content: "\f04b"
+}
+
+.fa-quote-right:before {
+    content: "\f10e"
+}
+
+.fa-spa:before {
+    content: "\f5bb"
+}
+
+.fa-spinner:before {
+    content: "\f110"
+}
+
+.fa-square:before {
+    content: "\f0c8"
+}
+
+.fa-swimmer:before {
+    content: "\f5c4"
+}
+
+.fa-text-height:before {
+    content: "\f034"
+}
+
+.fa-text-width:before {
+    content: "\f035"
+}
+
+.fa-twitter:before {
+    content: "\f099"
+}
+
+.fa-twitter-square:before {
+    content: "\f081"
+}
+
+.fa-users:before {
+    content: "\f0c0"
+}
+
+.fa-users-cog:before {
+    content: "\f509"
+}
+
+.fa-utensils:before {
+    content: "\f2e7"
+}
+
+.fa-video:before {
+    content: "\f03d"
+}
+
+.fa-wifi:before {
+    content: "\f1eb"
+}
+
+.fa-youtube:before {
+    content: "\f167"
+}
+
+.fa-youtube-square:before {
+    content: "\f431"
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: auto;
+    src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-brands-400.eot);
+    src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-brands-400.woff2) format("woff2"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-brands-400.woff) format("woff"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-brands-400.ttf) format("truetype"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-brands-400.svg#fontawesome) format("svg")
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands"
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 400;
+    font-display: auto;
+    src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-regular-400.eot);
+    src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-regular-400.woff2) format("woff2"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-regular-400.woff) format("woff"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-regular-400.ttf) format("truetype"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-regular-400.svg#fontawesome) format("svg")
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-solid-900.eot);
+    src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-solid-900.woff2) format("woff2"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-solid-900.woff) format("woff"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-solid-900.ttf) format("truetype"), url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/webfonts/fa-solid-900.svg#fontawesome) format("svg")
+}
+
+.fa {
+    font-family: "Font Awesome 5 Free"
+}
+
+.fa {
+    font-weight: 900
+}
