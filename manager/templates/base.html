@@ -1,3 +1,6 @@
+{#% load pipeline %#}
+{#% stylesheet 'manager' %#}
+{#% javascript 'manager' %#}
 {% load static  %}
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +14,7 @@
 
 
     <title>Thari Manager - Reports</title>
+    
 
     <!-- Bootstrap core CSS 
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">-->
@@ -391,10 +395,10 @@
     
 {% block js_script %}
 {% endblock %}
-<script type="text/javascript" src="{% static 'manager/assets/js/jquery-ui/jquery-ui.min.js ' %}"></script>
+<script type="text/javascript" src="{% static 'manager/assets/js/jquery-ui/jquery-ui.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'manager/assets/js/popper.js/popper.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'manager/assets/js/bootstrap/js/bootstrap.min.js' %} "></script>
-<script type="text/javascript" src="{% static 'manager/assets/pages/widget/excanvas.js ' %}"></script>
+<script type="text/javascript" src="{% static 'manager/assets/pages/widget/excanvas.js' %}"></script>
 
 {#DatePicker #}
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -408,10 +412,10 @@
 
 <script type="text/javascript" src="{% static 'manager/assets/js/jquery-slimscroll/jquery.slimscroll.js' %} "></script>
 <!-- modernizr js -->
-<script type="text/javascript" src="{% static 'manager/assets/js/modernizr/modernizr.js ' %}"></script>
+<script type="text/javascript" src="{% static 'manager/assets/js/modernizr/modernizr.js' %}"></script>
 <!-- slimscroll js -->
 <script type="text/javascript" src="{% static 'manager/assets/js/SmoothScroll.js' %}"></script>
-<script src="{% static 'manager/assets/js/jquery.mCustomScrollbar.concat.min.js ' %}"></script>
+<script src="{% static 'manager/assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
 <script src="{% static 'manager/assets/js/pcoded.min.js' %}"></script>
 <script src="{% static 'manager/assets/js/vertical-layout.min.js' %} "></script>
 <!-- custom js--> 

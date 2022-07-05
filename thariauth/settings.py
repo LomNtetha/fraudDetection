@@ -2,17 +2,19 @@
 import os
 from pathlib import Path
 from typing import Optional
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+env = environ.Env()
+environ.Env.read_env()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r*#e_37iw!v-&41#-#42_7jp))m^p%r_p30^jvsfw421t5$_(n'
-
+#SECRET_KEY = 'django-insecure-r*#e_37iw!v-&41#-#42_7jp))m^p%r_p30^jvsfw421t5$_(n'
+SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -67,6 +69,7 @@ INSTALLED_APPS = [
   'admin_honeypot',
  #'django-cryptography',
   'import_export',
+ 
    "debug_toolbar",
  
 
@@ -74,10 +77,12 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+      
+    'django.middleware.cache.UpdateCacheMiddleware',   
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware',  
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -88,9 +93,13 @@ MIDDLEWARE = [
     'two_factor.middleware.threadlocals.ThreadLocals',
     #add request analytics
     'request.middleware.RequestMiddleware',
+    
+  
+    
     #Add ploptly dash middleware
    #'django_plotly_dash.middleware.BaseMiddleware'  
    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 
 ROOT_URLCONF = 'thariauth.urls'
@@ -135,11 +144,11 @@ WSGI_APPLICATION = 'thariauth.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'THARIAUTH',
-        'HOST': '127.0.0.1',
-        'PORT': '3360',
-        'USER': 'root',
-        'PASSWORD': '50899604',
+        'NAME': env("DATABASE_NAME"),
+        'USER': env("DATABASE_USER"),
+        'PASSWORD': env("DATABASE_PASSWORD"),
+        'HOST': env("DATABASE_HOST"),
+        'PORT': env("DATABASE_PORT"),
     }
 }
 
@@ -243,11 +252,10 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 # Sending emails using SMTP host server
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER = "ntethalumkile@gmail.com"
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-#EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = "50899604"
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = env("EMAIL_PORT")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 
 ACCOUNT_EMAIL_VERIFICATION ="mandatory"
 
@@ -292,9 +300,9 @@ TWO_FACTOR_CALL_GATEWAY= 'two_factor.gateways.twilio.gateway.Twilio'
 
 #LOGOUT_REDIRECT_URL= 'account_login'
 
-TWILIO_ACCOUNT_SID= 'AC6398d7e0b8c676f0d9b307f1ccca8e63'
-TWILIO_AUTH_TOKEN= 'b78179ec2b17e9edbae2db06d1c421d8'
-TWILIO_CALLER_ID='+19402363186'
+TWILIO_ACCOUNT_SID= env("TWILIO_ACCOUNT_SID")
+TWILIO_AUTH_TOKEN=env("TWILIO_AUTH_TOKEN")
+TWILIO_CALLER_ID=env("TWILIO_CALLER_ID")
 #TWILIO_MESSAGING_SERVICE_SID='MGd15d161e21b2f6ab640e2249a9044074'
 
 
@@ -303,9 +311,10 @@ TWILIO_CALLER_ID='+19402363186'
 
 Settings for Stripe payment
 """
+TWILIO_CALLER_ID=env("TWILIO_CALLER_ID")
 
-STRIPE_TEST_PUBLIC_KEY = 'pk_test_51Ke3hVHJdOtHtnwsMnWowUfvjwvwQlaiZjGe5MQQVhK6elRlClCLphJWrxN6O3PkWMN08mvnbQjpPVgkizExJv7L00Z9YxWoft'
-STRIPE_TEST_SECRET_KEY = 'sk_test_51Ke3hVHJdOtHtnwsenSvBtruTbOv3Hb5Se3Eh9OGbA8eKE7OW1mJNcpEIDdIvp57kaWWl7yvkwUbRI0C1CcMCcmF00jIh6vfAg'
+STRIPE_TEST_PUBLIC_KEY =env("STRIPE_TEST_PUBLIC_KEY")
+STRIPE_TEST_SECRET_KEY =env("STRIPE_TEST_SECRET_KEY")
 STRIPE_LIVE_MODE = False
 
 """
@@ -452,6 +461,9 @@ ASGI_APPLICATION = 'thariauth.routing.application'
 #CRYPTOGRAPHY_SALT = 'django-cryptography',
 INTERNAL_IPS = [
     # ...
-    #"127.0.0.1",
+   # "127.0.0.1",
     # ...
 ]
+CACHE_MIDDLEWARE_ALIAS = 'default'  # which cache alias to use
+CACHE_MIDDLEWARE_SECONDS = 600   # number of seconds to cache a page for (TTL)
+CACHE_MIDDLEWARE_KEY_PREFIX = '' 
