@@ -23,14 +23,9 @@ urlpatterns = [
     # path('agent/', include('agent.urls')),
      path('manager/', include('manager.urls')),
      path('manager/', TemplateView.as_view(template_name="index.html")),
-     #path('marketing/', include('marketing.urls')),
      #Twilio client URL
      path('', include(tf_twilio_urls)),
-     #path('accounts/',TemplateView.as_view(Template_name="account/login")),
-    #re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
-     #re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
-     path('__debug__/', include('debug_toolbar.urls')),  
-
+   
 
       
       

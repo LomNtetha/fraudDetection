@@ -69,15 +69,18 @@ INSTALLED_APPS = [
   'admin_honeypot',
  #'django-cryptography',
   'import_export',
- 
-   "debug_toolbar",
+   'compressor',
+
  
 
 ]    
 
 
 MIDDLEWARE = [
-      
+    'django.middleware.gzip.GZipMiddleware', #This one
+    'htmlmin.middleware.HtmlMinifyMiddleware', #This one
+    'htmlmin.middleware.MarkRequestMiddleware', #This one
+
     'django.middleware.cache.UpdateCacheMiddleware',   
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', 
@@ -98,7 +101,6 @@ MIDDLEWARE = [
     
     #Add ploptly dash middleware
    #'django_plotly_dash.middleware.BaseMiddleware'  
-   "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 
@@ -134,23 +136,20 @@ WSGI_APPLICATION = 'thariauth.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-#DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #}
-#}
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': env("DATABASE_NAME"),
-        'USER': env("DATABASE_USER"),
-        'PASSWORD': env("DATABASE_PASSWORD"),
-        'HOST': env("DATABASE_HOST"),
-        'PORT': env("DATABASE_PORT"),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+#ATABASES = {
+    #'default': {
+       #    'PASSWORD': env("DATABASE_PASSWORD"),
+   #     'HOST': env("DATABASE_HOST"),
+  #      'PORT': env("DATABASE_PORT"),
+ #   }
+#}
 
 AUTHENTICATION_BACKENDS = [
     
@@ -195,28 +194,20 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-file
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR,"static_root")
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 
-#MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-STATIC_URL = 'static/'
-STATIC_ROOT ='var/www/thari/assets/'
-
-
-#STATICFILES_DIRS = [
- #   BASE_DIR / "static",
-  #  '/var/www/static/',
-#]
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
+    # Add this
+    'compressor.finders.CompressorFinder',
+)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-#CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 #CRISPY_TEMPLATE_PACK = "bootstrap4"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 """
@@ -269,10 +260,6 @@ LOGIN_REDIRECT_URL = 'dashboard'
 ACCOUNT_AUTHENTICATION_METHOD =  "username_email"
 #forcing cutomer to login using email
 ACCOUNT_EMAIL_REQUIRED = True
-#settings the username to be Uppercases
-#ACCOUNT_PRESERVE_USERNAME_CASING = False
-#Automatically login after email confirmation
-#ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL=True
 
 SOCIALACCOUNT_EMAIL_VERIFICATION = ACCOUNT_EMAIL_VERIFICATION
 #adding extra sign in fields
@@ -294,9 +281,6 @@ TWO_FACTOR_SMS_GATEWAY= 'two_factor.gateways.twilio.gateway.Twilio'
 TWO_FACTOR_CALL_GATEWAY= 'two_factor.gateways.twilio.gateway.Twilio'
 
 #TWO_FACTOR_REMEMBER_COOKIE_AGE='activate'
-
-#TWO_FACTOR_CALL_GATEWAY = 'two_factor.gateways.fake.fake'
-#TWO_FACTOR_SMS_GATEWAY = 'two_factor.gateways.fake.Fake'
 
 #LOGOUT_REDIRECT_URL= 'account_login'
 
@@ -416,12 +400,7 @@ CLICKY_SITE_ID='101362724',
 from django.utils.translation import gettext_lazy as _
 
 MENU = (
-    #('', _('Welcome')),
-    #('setup', _('Report Model')),
-    #('no-group-by', _('Simple Filter')),
-
-    #('no-group-by-plus-charts', _('Simple Filter tidying up')),
-
+   
 
     ('group-by', _('Total Sales per Policy')),
     ('group-by-chart', _('Total Number of Policy')),
@@ -431,39 +410,27 @@ MENU = (
     ('time-series', _('Number of Policy Sold')),
     ('time-series-charts', _('Analysis of Policy Per Month')),
     ('time-series-without-group-by', _('Total Sales Per Month')),
-
-    #('crosstab', _('Crosstab')),
-    #('crosstab-charts', _('Crosstab Customization')),
-
-    # ('crosstab-charts', _('Integration in your own views')),
-    # ('crosstab-charts', _('Writing your own chart')),
-
-    # ('crosstab-charts', _('Form Customization')),
-    # ('crosstab-charts', _('ReportFields')),
     ('thank-you', _('Reports')),
 
 )
 
 
 ASGI_APPLICATION = 'thariauth.routing.application'
-#CHANNEL_LAYERS = {
- #   'default': {
-  #      'BACKEND': 'channels_redis.core.RedisChannelLayer',
-   #     'CONFIG': {
-    #        'hosts': [('127.0.0.1', 6379),],
-     #   }
-   # }
-#}
-# Settings for Encryption and Decryption of The data
-#CRYPTOGRAPHY_BACKEND = 'cryptography.hazmat.backends.default_backend()',
-#CRYPTOGRAPHY_DIGEST = 'cryptography.hazmat.primitives.hashes.SHA256',
-#CRYPTOGRAPHY_KEY = 'CRYPTOGRAPHY_KEY',
-#CRYPTOGRAPHY_SALT = 'django-cryptography',
-INTERNAL_IPS = [
-    # ...
-   # "127.0.0.1",
-    # ...
-]
+
 CACHE_MIDDLEWARE_ALIAS = 'default'  # which cache alias to use
 CACHE_MIDDLEWARE_SECONDS = 600   # number of seconds to cache a page for (TTL)
 CACHE_MIDDLEWARE_KEY_PREFIX = '' 
+
+COMPRESS_ENABLED = True
+COMPRESS_CSS_HASHING_METHOD = 'content'
+COMPRESS_FILTERS = {
+    'css':[
+        'compressor.filters.css_default.CssAbsoluteFilter',
+        'compressor.filters.cssmin.rCSSMinFilter',
+    ],
+    'js':[
+        'compressor.filters.jsmin.JSMinFilter',
+    ]
+}
+HTML_MINIFY = True
+KEEP_COMMENTS_ON_MINIFYING = True

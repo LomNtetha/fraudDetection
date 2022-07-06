@@ -1,7 +1,5 @@
-{#% load pipeline %#}
-{#% stylesheet 'manager' %#}
-{#% javascript 'manager' %#}
 {% load static  %}
+{% load compress %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,24 +13,14 @@
 
     <title>Thari Manager - Reports</title>
     
-
-    <!-- Bootstrap core CSS 
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">-->
-
     <!-- Custom styles for this template -->
-    <link href="{% static 'manager/css/simple-sidebar.css' %}" rel="stylesheet">
-
-
     <link rel="stylesheet" type="text/css"
           href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
-<!--
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/themes/prism.css"/>-->
-         <!-- Favicon icon -->
+  <!-- Favicon icon -->
          <link rel="icon" href="{% static 'manager/assets/images/favicon.ico' %}" type="image/x-icon">
-         <!-- Google font
-         <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
-    -->
+  {% compress css %}
+  <link href="{% static 'manager/css/simple-sidebar.css' %}" rel="stylesheet">
            <!-- Required Fremwork -->
            <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/css/bootstrap/css/bootstrap.min.css' %}">
            
@@ -46,9 +34,10 @@
            <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/css/jquery.mCustomScrollbar.css' %}">
            <!-- Style.css -->
            <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/css/style.css' %}">
-    
+           {% endcompress %}
     {% block extra_css %}
     {% endblock %}
+    
 
 </head>
 
@@ -129,7 +118,7 @@
                     </div>
                     <a href="index.html">
                         Thari Mutual
-                        <!--<img class="img-fluid" src="{#% static 'manager/assets/images/logo.png' %#}" alt="Theme-Logo" />-->
+                    
                     </a>
                     <a class="mobile-options waves-effect waves-light">
                         <i class="ti-more"></i>
@@ -169,7 +158,7 @@
                                 </li>
                                 <li class="waves-effect waves-light">
                                     <div class="media">
-                                        <img class="d-flex align-self-center img-radius" src="{% static 'clients/dashboard/assets/images/user/tharilogo.jpg' %}" alt="Generic placeholder image">
+                                        <img class="d-flex align-self-center img-radius" src="{% static 'manager/assets/images/tharilogo.jpg' %}" alt="Generic placeholder image">
                                         <div class="media-body">
                                             <h5 class="notification-user">Lumkile Ntetha</h5>
                                             <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -179,7 +168,7 @@
                                 </li>
                                 <li class="waves-effect waves-light">
                                     <div class="media">
-                                        <img class="d-flex align-self-center img-radius" src="{% static 'clients/dashboard/assets/images/user/tharilogo.jpg' %}" alt="Generic placeholder image">
+                                        <img class="d-flex align-self-center img-radius" src="{% static 'manager/assets/images/tharilogo.jpg' %}" alt="Generic placeholder image">
                                         <div class="media-body">
                                             <h5 class="notification-user">Tumisang Ngatane</h5>
                                             <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -189,7 +178,7 @@
                                 </li>
                                 <li class="waves-effect waves-light">
                                     <div class="media">
-                                        <img class="d-flex align-self-center img-radius" src="{% static 'manager/assets/images/user/tharilogo.jpg' %}" alt="Generic placeholder image">
+                                        <img class="d-flex align-self-center img-radius" src="{% static 'manager/assets/images/tharilogo.jpg' %}" alt="Generic placeholder image">
                                         <div class="media-body">
                                             <h5 class="notification-user">Tumelo Mokobocho</h5>
                                             <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -201,7 +190,7 @@
                         </li>
                         <li class="user-profile header-notification">
                             <a href="#!" class="waves-effect waves-light">
-                                <img src="{% static 'clients/dashboard/assets/images/user/tharilogo.jpg' %}" class="img-radius" alt="User-Profile-Image">
+                                <img src="{% static 'manager/assets/images/tharilogo.jpg' %}" class="img-radius" alt="User-Profile-Image">
                                 <span>The Manager</span>
                                 <i class="ti-angle-down"></i>
                             </a>
@@ -249,7 +238,7 @@
                     <div class="pcoded-inner-navbar main-menu">
                         <div class="">
                             <div class="main-menu-header">
-                                <img class="img-80 img-radius" src="{% static 'clients/dashboard/assets/images/user/tharilogo.jpg' %}" alt="User-Profile-Image">
+                                <img class="img-80 img-radius" src="{% static 'manager/assets/images/tharilogo.jpg' %}" alt="User-Profile-Image">
                                 <div class="user-details">
                                     <span id="more-details">Manager<i class="fa fa-caret-down"></i></span>
                                 </div>
@@ -395,21 +384,11 @@
     
 {% block js_script %}
 {% endblock %}
+{% compress js %}
 <script type="text/javascript" src="{% static 'manager/assets/js/jquery-ui/jquery-ui.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'manager/assets/js/popper.js/popper.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'manager/assets/js/bootstrap/js/bootstrap.min.js' %} "></script>
 <script type="text/javascript" src="{% static 'manager/assets/pages/widget/excanvas.js' %}"></script>
-
-{#DatePicker #}
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
-
-<!--<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet"/>-->
-<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"
-        integrity="JnbsSLBmv2/R0fUmF2XYIcAEMPHEAO51Gitn9IjL4l89uFTIgtLF1+jqIqqd9FSk"
-        crossorigin="anonymous"></script>
-
 <script type="text/javascript" src="{% static 'manager/assets/js/jquery-slimscroll/jquery.slimscroll.js' %} "></script>
 <!-- modernizr js -->
 <script type="text/javascript" src="{% static 'manager/assets/js/modernizr/modernizr.js' %}"></script>
@@ -421,15 +400,17 @@
 <!-- custom js--> 
 <script type="text/javascript" src="{% static 'manager/assets/pages/dashboard/custom-dashboard.js' %}"></script>
 <script type="text/javascript" src="{% static 'manager/assets/js/script.js' %} "></script>
+{% endcompress %}
 
- 
-    <!-- waves js >-->
-    <!-- jquery slimscroll js 
-    <script src="{% static 'manager/assets/pages/waves/js/waves.min.js' %}"></script>
-     
-    <script type="text/javascript" src="{% static 'manager/assets/js/chart.js/Chart.js' %}"></script>
-  -->
- 
+{#DatePicker #}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+
+<!--<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet"/>-->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"
+        integrity="JnbsSLBmv2/R0fUmF2XYIcAEMPHEAO51Gitn9IjL4l89uFTIgtLF1+jqIqqd9FSk"
+        crossorigin="anonymous"></script>
  
 </body>
 

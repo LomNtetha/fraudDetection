@@ -1,7 +1,5 @@
-{#% load pipeline %#}
-{#% stylesheet 'dashboard' %#}
-{#% javascript 'dashboard' %#}
 {% load static %}
+{% load compress %}
   <!DOCTYPE html>
   <html lang="en">
   
@@ -16,11 +14,14 @@
       <meta name="author" content="Phoenixcoded" />
      
       <!-- Favicon icon -->
-      <link rel="icon" href="{% static 'clients/dashboard/assets/images/favicon.ico' %}" type="image/x-icon">
-  
+      
+    <link rel="icon" href="{% static 'clients/dashboard/assets/images/favicon.ico' %}" type="image/x-icon">
+    
+
+      {% compress css %}
       <!-- vendor css -->
       <link rel="stylesheet" href="{% static 'clients/dashboard/assets/css/style.css' %}">
-      
+        {% endcompress %}
 <style>
       .form-group {
         margin-top: 10px;
@@ -99,7 +100,7 @@ input[type=submit]:hover {
     {% endblock %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+{% compress js %}
     <!-- Required Js -->
     <script src="{% static 'clients/dashboard/assets/js/vendor-all.min.js' %}"></script>
     <script src="{% static 'clients/dashboard/assets/js/plugins/bootstrap.min.js' %}"></script>
@@ -107,14 +108,7 @@ input[type=submit]:hover {
     
     <script src="{% static 'clients/dashboard/assets/js/pcoded.js' %}"></script>
 
-<!-- Apex Chart 
-<script src="{% static 'clients/dashboard/assets/js/plugins/apexcharts.min.js' %}"></script>
-
--->
-<!-- custom-chart js
-<script src="{% static 'clients/dashboard/assets/js/pages/dashboard-main.js' %}"></script>
-     --> 
-
+     {% endcompress %}
 <script>
   $(document).on('submit', '#post-form',function(e){
       e.preventDefault();
