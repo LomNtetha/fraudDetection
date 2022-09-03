@@ -1,10 +1,8 @@
 # Fraud Detection and Analysisy System
+This is a machine learning and django based system 
 
 This is a web-based fraud detection and sales analysing system for an insurance companies that has three main modules which are Client, Sales support and manager,i developed this system while I was doing my final year at the university. First of all, before I train and test algorithm models to detect fraud, I analyze the datasets following CRISP-DM techniques.
 
-## Recommendations
-
-My recommendation to everyone in the field of analysing data from large Datasets is to follow CRISP-DM  Techniques while working with large and complicated datasets.
 
 ## System Description for Visualization of Data
 
@@ -13,6 +11,13 @@ While working with the dataset, I used  Matplotlib, tabulate and Seaborn to visu
 ## Transparency of Data
 
 The fraud detection part of the system is specifically detecting whether the claim is fraudulent or legitimate while the client claiming for their benefits during an incident. So far the system was enabled to detect whether the claim is fraudulent or legitimate and report or revealed it to the sales support team of the insurance. 
+
+## Goals about this sytem 
+My goal is to build a fully functioning system that will allow clients to subscribe for policy online.The system suppossed to verify whether the clients are whom they claim they are while registaring and claiming for their benefits using deep learnig algorithms. To buid the system that will predict what will be the sales of policy in comming weeks,months or even years. The system will have recommendations functionality
+
+## Recommendations
+
+My recommendation to everyone in the field of analysing data from large Datasets is to follow CRISP-DM  Techniques while working with large and complicated datasets.
 
 ## project is live and running on heroku
 
