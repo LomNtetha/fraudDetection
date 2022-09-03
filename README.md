@@ -30,7 +30,7 @@ My goal is to build a fully functioning system that will allow clients to subscr
 
 My recommendation to everyone in the field of analysing data from large Datasets is to follow CRISP-DM  Techniques while working with large and complicated datasets.
 
-## project is live and running on heroku
+## how to run the System on local Machine
 
 To get started please ensure that python 3.8 or above is installed in your system
 
