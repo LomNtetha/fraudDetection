@@ -1,4 +1,4 @@
-# Fraud Detection and Analysisy System
+# Fraud Detection and Analysis System
 This is a machine learning and django based system 
 
 This is a web-based fraud detection and sales analysing system for an insurance companies that has three main modules which are Client, Sales support and manager,i developed this system while I was doing my final year at the university. First of all, before I train and test algorithm models to detect fraud, I analyze the datasets following CRISP-DM techniques.
@@ -12,7 +12,18 @@ While working with the dataset, I used  Matplotlib, tabulate and Seaborn to visu
 
 The fraud detection part of the system is specifically detecting whether the claim is fraudulent or legitimate while the client claiming for their benefits during an incident. So far the system was enabled to detect whether the claim is fraudulent or legitimate and report or revealed it to the sales support team of the insurance. 
 
-## Goals about this sytem 
+## Main Working Functionality of the System
+
+- Registaring of clients using social apps google
+- Two factor authentication using google authenticator and Twillio
+- Subscribing for policy and payements with Stripe
+- Make claims online 
+- fraud Detection
+- policy sales analysis and visualing of them inbarcharts and piecharts
+
+
+
+## Goals of the System
 My goal is to build a fully functioning system that will allow clients to subscribe for policy online.The system suppossed to verify whether the clients are whom they claim they are while registaring and claiming for their benefits using deep learnig algorithms. To buid the system that will predict what will be the sales of policy in comming weeks,months or even years. The system will have recommendations functionality
 
 ## Recommendations
@@ -21,23 +32,16 @@ My recommendation to everyone in the field of analysing data from large Datasets
 
 ## project is live and running on heroku
 
-- live link: https://mighty-sea-09546.herokuapp.com/catalog/
-- Login admin creditials:
-- https://mighty-sea-09546.herokuapp.com/admin
-- username:admin
-- password:1111
-## How to run The project Local on windows
-
 To get started please ensure that python 3.8 or above is installed in your system
 
+- Create a project directory
+  ```
+  mkdir projectfolder
+  ```
 
-- To run the project locally first of all clone the repository 
+- go to project folder
   ```
-  git clone https://github.com/LomNtetha/Library-Management-System.git
-  ```
-- go to project directory
-  ```
-  cd Library-Management-System
+  cd projectfolder
   ```
 
 - Create virtual environment
@@ -46,7 +50,15 @@ To get started please ensure that python 3.8 or above is installed in your syste
   ```
 - Activate the virtual environment
   ```
-  env/Scripts/activate
+  source env/bin/activate
+  ```
+- Then clone the project
+  ```
+  git clone https://github.com/LomNtetha/fraudDetection.git
+  ```
+- go to project directory
+  ```
+  cd fraudDetection
   ```
 
 - Install requirements file
@@ -56,17 +68,17 @@ To get started please ensure that python 3.8 or above is installed in your syste
 
 - migrate Database
   ```
-  py manage.py migrate
+  python manage.py migrate
   ```
 
 - Create super user
   ```
-  py manage.py createsuperuser
+  python manage.py createsuperuser
   ```
 
 - run the project
   ```
-  py manage.py runserver
+  python manage.py runserver
   ```
 
 ## How to push the project on cloud Heroku PAAS
