@@ -30,7 +30,7 @@ My goal is to build a fully functioning system that will allow clients to subscr
 
 My recommendation to everyone in the field of analysing data from large Datasets is to follow CRISP-DM  Techniques while working with large and complicated datasets.
 
-## how to run the System on local Machine
+## project is live and running on heroku
 
 To get started please ensure that python 3.8 or above is installed in your system
 
@@ -125,12 +125,6 @@ install heroku cli and git on you system and create  account on heroku
   heroku open
   ```
 
-## packages used 
-- python 3.10.2 local and python 3.10.6 on heroku
-- Django 4.1
-- Sqlite local and postgresql heroku
-- whitenoise  6.2.0 for static files
-- bootstrap 5
-- gunicorn 20.1.0 for http and https server request
+
  
 
