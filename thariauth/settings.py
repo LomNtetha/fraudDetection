@@ -7,39 +7,23 @@ import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-env = environ.Env()
-environ.Env.read_env()
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
+env = environ.Env(
+    ALLOWED_HOSTS=(list, []),
+    DEBUG=(bool, False),
+)
+env_file = BASE_DIR / ".env"
+if env_file.exists():
+    environ.Env.read_env(env_file)
 
-# SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-r*#e_37iw!v-&41#-#42_7jp))m^p%r_p30^jvsfw421t5$_(n'
 SECRET_KEY = env("SECRET_KEY")
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
-#''
-"""
-All apps that are used by the system installed here 
-
-"""
-
+ALLOWED_HOSTS: list[str] = env("ALLOWED_HOSTS")
+#All apps that are used by the system installed here 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'clients.apps.ClientsConfig',
-   # 'agent.apps.AgentConfig',
     'manager.apps.ManagerConfig',
-    #'marketing.apps.MarketingConfig',
-    
-  #'accounts.apps.AccountsConfig',
- 
- #'campaigns.apps.CampaignsConfig',
- #'core.apps.CoreConfig',
- #'lists.apps.ListsConfig',
- #'notifications.apps.NotificationsConfig',
- #'subscribers.apps.SubscribersConfig',
- #'templates.apps.TemplatesConfig',
     'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -70,10 +54,8 @@ INSTALLED_APPS = [
  #'django-cryptography',
   'import_export',
    'compressor',
-
- 
-
-]    
+] 
+SITE_ID=1   
 
 
 MIDDLEWARE = [
@@ -143,7 +125,7 @@ DATABASES = {
     }
 }
 
-#ATABASES = {
+#DATABASES = {
     #'default': {
        #    'PASSWORD': env("DATABASE_PASSWORD"),
    #     'HOST': env("DATABASE_HOST"),

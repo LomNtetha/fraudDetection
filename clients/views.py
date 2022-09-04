@@ -42,10 +42,10 @@ from xgboost import plot_tree
 from xgboost import plot_importance
 
 # import packages for hyperparameters tuning
-from hyperopt import STATUS_OK, Trials, fmin, hp, tpe
-import hyperopt.pyll
-from hyperopt.pyll import scope
-from hpsklearn import HyperoptEstimator
+#from hyperopt import STATUS_OK, Trials, fmin, hp, tpe
+#import hyperopt.pyll
+#from hyperopt.pyll import scope
+#from hpsklearn import HyperoptEstimator
 
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.tree import plot_tree
