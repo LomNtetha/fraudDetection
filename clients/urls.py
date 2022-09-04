@@ -27,17 +27,4 @@ urlpatterns = [
     path('clients/dashboard/fraud/', views.predict_chances, name='submit_prediction'),
     path('clients/dashboard/results/', views.view_results, name='results'),
 
-    
-    path('clients/dashboard/multistepformexample/', views.multistepformexample, name='multistepformexample'),
-    path('clients/dashboard/multistepformexample_save/', views.multistepformexample_save, name='multistepformexample_save'),
-
-    #path('', views.predict, name='prediction_page'),
-    #path('clients/dashboard/predict/', views.predict_chances, name='submit_prediction'),
-    #path('clients/dashboard/results/', views.view_results, name='results'),
-
-
-#path('dashboard/', TemplateView.as_view(template_name='dashboard/dashboard.html'), name='dashboard'),
-
-
-   #path('home/', TemplateView.as_view(template_name='dashboard/home.html'), name='home'),
     ]

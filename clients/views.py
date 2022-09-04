@@ -191,79 +191,16 @@ def predict_chances(request):
         Year = int(request.POST.get('Year'))
 
         #unpickle data
-        clf_dt1 = pd.read_pickle(r"C:\Users\lumkile\Desktop\Django\thariauth\clients\fraud_model.pickle")
+        clf_dt1 = pd.read_pickle(r"/home/lumkile/django-projects/insurance/fraudDetection/clients/fraud_model.pickle")
 
         #make predictions
         result = clf_dt1.predict([[Month, WeekOfMonth, DayOfWeek, Make, AccidentArea, DayOfWeekClaimed, MonthClaimed, WeekOfMonthClaimed, Sex, MaritalStatus, Age, Fault, PolicyType, VehicleCategory, VehiclePrice, PolicyNumber, RepNumber, Deductible, DriverRating, Days_Policy_Accident, AgeOfVehicle, PoliceReportFiled, WitnessPresent, AgentType, NumberOfCars, Year]])
         FraudFound_P = result
         FraudDetection.objects.create(Month = Month, WeekOfMonth = WeekOfMonth, DayOfWeek = DayOfWeek, Make = Make, AccidentArea = AccidentArea, DayOfWeekClaimed = DayOfWeekClaimed, MonthClaimed = MonthClaimed, WeekOfMonthClaimed = WeekOfMonthClaimed, Sex = Sex, MaritalStatus = MaritalStatus, Age = Age, Fault = Fault, PolicyType = PolicyType, VehicleCategory = VehicleCategory, VehiclePrice = VehiclePrice, PolicyNumber = PolicyNumber, RepNumber = RepNumber, Deductible = Deductible, DriverRating =DriverRating, Days_Policy_Accident =Days_Policy_Accident, AgeOfVehicle = AgeOfVehicle, PoliceReportFiled = PoliceReportFiled, WitnessPresent = WitnessPresent, AgentType = AgentType, NumberOfCars = NumberOfCars, Year = Year, FraudFound_P = FraudFound_P )
     return render(request,'dashboard/fraud.html') 
-   # return JsonResponse({'result': FraudFound_P, 'Month': Month, 'WeeKOfMonth': WeekOfMonth, 'DayOfWeek': DayOfWeek, 'Make': Make, 'AccidentArea': AccidentArea, 'DayOfWeekClaimed': DayOfWeekClaimed, 'MonthClaimed': MonthClaimed, 'WeekOfMonthClaimed': WeekOfMonthClaimed, 'Sex': Sex, 'MaritalStatus': MaritalStatus, 'Age': Age, 'Fault': Fault, 'PolicyType': PolicyType, 'VehicleCategory': VehicleCategory, 'VehiclePrice': VehiclePrice, 'PolicyNumber': PolicyNumber, 'RepNumber': RepNumber, 'Deductible': Deductible, 'DriverRating': DriverRating, 'Days_Policy_Accident': Days_Policy_Accident, 'AgeOfVehicle': AgeOfVehicle, 'PoliceReportFiled': PoliceReportFiled, 'WitnessPresent': WitnessPresent, 'AgentType': AgentType, 'NumberOfCars': NumberOfCars, 'Year': Year}, safe=False)
-         
-    
-                      
-
+   
 def view_results(request):
     # Submit prediction and show all
     data = {"dataset": FraudDetection.objects.all()}
     return render(request, "dashboard/results.html", data)
-
-def multistepformexample(request):
-    return render(request,"dashboard/multistepformexample.html")
-
-def multistepformexample_save(request):
-    #if request.method=="POST":
-    if request.POST.get('action') == "POST":
-        
-        Month=request.POST.get("Month")
-        WeekOfMonth = request.POST.get('WeekOfMonth')
-        DayOfWeek = request.POST.get('DayOfWeek')
-        Make = request.POST.get('Make')
-        AccidentArea = request.POST.get('AccidentArea')
-        DayOfWeekClaimed = request.POST.get('DayOfWeekClaimed')
-        MonthClaimed = request.POST.get('MonthClaimed')
-        WeekOfMonthClaimed = request.POST.get('WeekOfMonthClaimed')
-        Sex = request.POST.get('Sex')
-        MaritalStatus = request.POST.get('MaritalStatus')
-        Age = request.POST.get('Age')
-        Fault = request.POST.get('Fault')
-        PolicyType = request.POST.get('PolicyType')
-        VehicleCategory = request.POST.get('VehicleCategory')
-        VehiclePrice = request.POST.get('VehiclePrice')
-        PolicyNumber = request.POST.get('PolicyNumber')
-        RepNumber = request.POST.get('RepNumber')
-        Deductible = request.POST.get('Deductible')
-        DriverRating = request.POST.get('DriverRating')
-        Days_Policy_Accident = request.POST.get('Days_Policy_Accident')
-        AgeOfVehicle = request.POST.get('AgeOfVehicle')
-        PoliceReportFiled = request.POST.get('PoliceReportFiled')
-        WitnessPresent = request.POST.get('WitnessPresent')
-        AgentType = request.POST.get('AgentType')
-        NumberOfCars = request.POST.get('NumberOfCars')
-        Year = request.POST.get('Year')
-        
-        clf_dt1 = pd.read_pickle(r"C:\Users\lumkile\Desktop\Django\thariauth\clients\fraud_model.pickle")
-        result = clf_dt1.predict([[Month, WeekOfMonth, DayOfWeek, Make, AccidentArea, DayOfWeekClaimed, MonthClaimed, WeekOfMonthClaimed, Sex, MaritalStatus, Age, Fault, PolicyType, VehicleCategory, VehiclePrice, PolicyNumber, RepNumber, Deductible, DriverRating, Days_Policy_Accident, AgeOfVehicle, PoliceReportFiled, WitnessPresent, AgentType, NumberOfCars, Year]])
-        FraudFound_P = result
-        FraudDetection.objects.create(Month = Month, WeekOfMonth = WeekOfMonth, DayOfWeek = DayOfWeek, Make = Make, AccidentArea = AccidentArea, DayOfWeekClaimed = DayOfWeekClaimed, MonthClaimed = MonthClaimed, WeekOfMonthClaimed = WeekOfMonthClaimed, Sex = Sex, MaritalStatus = MaritalStatus, Age = Age, Fault = Fault, PolicyType = PolicyType, VehicleCategory = VehicleCategory, VehiclePrice = VehiclePrice, PolicyNumber = PolicyNumber, RepNumber = RepNumber, Deductible = Deductible, DriverRating =DriverRating, Days_Policy_Accident =Days_Policy_Accident, AgeOfVehicle = AgeOfVehicle, PoliceReportFiled = PoliceReportFiled, WitnessPresent = WitnessPresent, AgentType = AgentType, NumberOfCars = NumberOfCars, Year = Year, FraudFound_P = FraudFound_P )
-        #multistepform.save()
-        messages.success(request,"Data Save Successfully")
-            
-          # FraudDetection.objects.create(Month = Month, WeekOfMonth = WeekOfMonth, DayOfWeek = DayOfWeek, Make = Make, AccidentArea = AccidentArea, DayOfWeekClaimed = DayOfWeekClaimed, MonthClaimed = MonthClaimed, WeekOfMonthClaimed = WeekOfMonthClaimed, Sex = Sex, MaritalStatus = MaritalStatus, Age = Age, Fault = Fault, PolicyType = PolicyType, VehicleCategory = VehicleCategory, VehiclePrice = VehiclePrice, PolicyNumber = PolicyNumber, RepNumber = RepNumber, Deductible = Deductible, DriverRating =DriverRating, Days_Policy_Accident =Days_Policy_Accident, AgeOfVehicle = AgeOfVehicle, PoliceReportFiled = PoliceReportFiled, WitnessPresent = WitnessPresent, AgentType = AgentType, NumberOfCars = NumberOfCars, Year = Year, FraudFound_P = FraudFound_P )
-          #  return render(request,'dashboard/fraud.html') 
-        #return render(request,'dashboard/multistepformexample.html') 
-        return HttpResponseRedirect(reverse('dashboard/multistepformexample')) 
-        
-
-       # try:
-          
-            #multistepform=MultiStepFormModel(fname=fname,lname=lname,phone=phone,twitter=twitter,facebook=facebook,gplus=gplus,email=email,password=password)
-            #multistepform.save()
-           # messages.success(request,"Data Save Successfully")
-            #return HttpResponseRedirect(reverse('multistepformexample'))
-        #except:
-          #  messages.error(request,"Error in Saving Data")
-        #    return HttpResponseRedirect(reverse('multistepformexample'))
-
-
 
