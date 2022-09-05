@@ -20,9 +20,7 @@ urlpatterns = [
 	# User Dashboard Section Start
   # user dashboard URL 
   path('clients/dashboard/fraud.html', views.dashboard, name="dashboard"),
-
     path('clients/dashboard', views.predict, name="predict"),
-
     path('clients/dashboard/', views.predict, name='prediction_page'),
     path('clients/dashboard/fraud/', views.predict_chances, name='submit_prediction'),
     path('clients/dashboard/results/', views.view_results, name='results'),

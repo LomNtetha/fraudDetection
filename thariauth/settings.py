@@ -269,10 +269,6 @@ TWO_FACTOR_CALL_GATEWAY= 'two_factor.gateways.twilio.gateway.Twilio'
 TWILIO_ACCOUNT_SID= env("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN=env("TWILIO_AUTH_TOKEN")
 TWILIO_CALLER_ID=env("TWILIO_CALLER_ID")
-#TWILIO_MESSAGING_SERVICE_SID='MGd15d161e21b2f6ab640e2249a9044074'
-
-
-#AUTH_USER_MODEL = 'clients.CustomUser'
 """
 
 Settings for Stripe payment
@@ -293,13 +289,13 @@ JAZZMIN_SETTINGS = {
     "site_title": "Sales Support",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "ThariMutual",
+    "site_header": "XyZ Mutual",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
     "site_brand": "Sales Support",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "clients/images/logo/newlogo.jpg",
+    "site_logo": "clients/hot/img/insurancelogo.png",
 
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
@@ -308,10 +304,10 @@ JAZZMIN_SETTINGS = {
     "site_icon": None,
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the ThariMutual",
+    "welcome_sign": "Welcome to the XyZ Mutual",
 
     # Copyright on the footer
-    "copyright": "ThariMutual (Pty) Ltd",
+    "copyright": "XyZ Mutual(Pty) Ltd",
     
      
     "show_ui_builder":True,
