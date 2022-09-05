@@ -16,20 +16,12 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css"
           href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
   <!-- Favicon icon -->
          <link rel="icon" href="{% static 'clients/hot/img/insurancelogo.png' %}" type="image/x-icon">
-  {% compress css %}
-  <link href="{% static 'manager/css/simple-sidebar.css' %}" rel="stylesheet">
-           <!-- Required Fremwork -->
-           <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/css/bootstrap/css/bootstrap.min.css' %}">
-           
-           <!-- waves.css -->
-           <link rel="stylesheet" href="{% static 'manager/assets/pages/waves/css/waves.min.css' %}" type="text/css" media="all">
-           <!-- themify icon -->
-           <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/icon/themify-icons/themify-icons.css' %}">
-           <!-- Font Awesome -->
-           <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/icon/font-awesome/css/font-awesome.min.css' %}">
+         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+         
+
+{% compress css %}
            <!-- scrollbar.css -->
            <link rel="stylesheet" type="text/css" href="{% static 'manager/assets/css/jquery.mCustomScrollbar.css' %}">
            <!-- Style.css -->
@@ -384,33 +376,18 @@
     
 {% block js_script %}
 {% endblock %}
+
+<script type="text/javascript" src=""></script>
 {% compress js %}
-<script type="text/javascript" src="{% static 'manager/assets/js/jquery-ui/jquery-ui.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'manager/assets/js/popper.js/popper.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'manager/assets/js/bootstrap/js/bootstrap.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'manager/assets/pages/widget/excanvas.js' %}"></script>
-<script type="text/javascript" src="{% static 'manager/assets/js/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
-<!-- modernizr js -->
-<script type="text/javascript" src="{% static 'manager/assets/js/modernizr/modernizr.js' %}"></script>
+
 <!-- slimscroll js -->
-<script type="text/javascript" src="{% static 'manager/assets/js/SmoothScroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'manager/assets/js/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
 <script src="{% static 'manager/assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'manager/assets/js/SmoothScroll.js' %}"></script>
 <script src="{% static 'manager/assets/js/pcoded.min.js' %}"></script>
 <script src="{% static 'manager/assets/js/vertical-layout.min.js' %}"></script>
-<!-- custom js--> 
-<script type="text/javascript" src="{% static 'manager/assets/pages/dashboard/custom-dashboard.js' %}"></script>
 <script type="text/javascript" src="{% static 'manager/assets/js/script.js' %}"></script>
 {% endcompress %}
-
-{#DatePicker #}
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
-
-<!--<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet"/>-->
-<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"
-        integrity="JnbsSLBmv2/R0fUmF2XYIcAEMPHEAO51Gitn9IjL4l89uFTIgtLF1+jqIqqd9FSk"
-        crossorigin="anonymous"></script>
  
 </body>
 
