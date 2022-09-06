@@ -23,27 +23,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 
 
-    <!-- Icon Font Stylesheet-->
-{% compress css %}
+    <!-- Icon Font Stylesheet
+{#% compress css %#}-->
     <link href="{% static 'clients/hot/css/font-awesomem.min.css' %}" rel="stylesheet">
     <link href="{% static 'clients/hot/css/bootstrap-iconsm.css' %}" rel="stylesheet">
-    
-    
-   
-    <!-- Libraries Stylesheet -->
-    <link href="{% static 'clients/hot/lib/animate/animatem.min.css' %}" rel="stylesheet">
     <link href="{% static   'clients/hot/lib/owlcarousel/assets/owl.carouselm.min.css' %}" rel="stylesheet">
-    <link href="{% static 'clients/hot/lib/tempusdominus/css/tempusdominus-bootstrap-4m.min.css' %}" rel="stylesheet" />
-
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{% static 'clients/hot/css/bootstrap.min.css' %}" rel="stylesheet">
-    
-
-
-    <!-- Template Stylesheet -->
     <link href="{% static 'clients/hot/css/style.css'%}" rel="stylesheet">
     
-    {% endcompress %}
+    {#% endcompress %#}
     {% analytical_head_bottom %}
 </head>
 
@@ -216,7 +205,6 @@
     <!-- Template Javascript -->
     {% compress js %}
     <script src="{% static 'clients/hot/js/main.js'%}"></script>
-  <!-- <script src="{% static 'clients/js/custom.js'%}"></script>--> 
 
     {% endcompress %}
     {% analytical_body_bottom %}
