@@ -15,10 +15,16 @@ env_file = BASE_DIR / ".env"
 if env_file.exists():
     environ.Env.read_env(env_file)
 
-SECRET_KEY = env("SECRET_KEY")
-DEBUG = env("DEBUG")
+#SECRET_KEY = env("SECRET_KEY")
+#prepare for heroku
 
-ALLOWED_HOSTS: list[str] = env("ALLOWED_HOSTS")
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-r*#e_37iw!v-&41#-#42_7jp))m^p%r_p30^jvsfw421t5$_(n')
+#DEBUG = env("DEBUG")
+DEBUG = False
+
+#ALLOWED_HOSTS: list[str] = env("ALLOWED_HOSTS")
+#prepare for heroku
+ALLOWED_HOSTS = ['*']
 #All apps that are used by the system installed here 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
@@ -225,10 +231,18 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 # Sending emails using SMTP host server
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER = env("EMAIL_HOST_USER")
-EMAIL_HOST = env("EMAIL_HOST")
-EMAIL_PORT = env("EMAIL_PORT")
-EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+
+#EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+#EMAIL_HOST = env("EMAIL_HOST")
+#EMAIL_PORT = env("EMAIL_PORT")
+#EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+
+#prepare for heroku
+
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER','ntethalumkile@gmail.com')
+EMAIL_HOST = os.environ.get("EMAIL_HOST",'smtp.gmail.com')
+EMAIL_PORT = os.environ.get("EMAIL_PORT",587)
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD",'50899604')
 
 ACCOUNT_EMAIL_VERIFICATION ="mandatory"
 
@@ -265,17 +279,25 @@ TWO_FACTOR_CALL_GATEWAY= 'two_factor.gateways.twilio.gateway.Twilio'
 
 #LOGOUT_REDIRECT_URL= 'account_login'
 
-TWILIO_ACCOUNT_SID= env("TWILIO_ACCOUNT_SID")
-TWILIO_AUTH_TOKEN=env("TWILIO_AUTH_TOKEN")
-TWILIO_CALLER_ID=env("TWILIO_CALLER_ID")
+#TWILIO_ACCOUNT_SID= env("TWILIO_ACCOUNT_SID")
+#TWILIO_AUTH_TOKEN=env("TWILIO_AUTH_TOKEN")
+#TWILIO_CALLER_ID=env("TWILIO_CALLER_ID")
+
+TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID",'AC6398d7e0b8c676f0d9b307f1ccca8e63')
+TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN",'b78179ec2b17e9edbae2db06d1c421d8')
+TWILIO_CALLER_ID = os.environ.get("TWILIO_CALLER_ID",'+19402363186')
 """
 
 Settings for Stripe payment
 """
-TWILIO_CALLER_ID=env("TWILIO_CALLER_ID")
 
-STRIPE_TEST_PUBLIC_KEY =env("STRIPE_TEST_PUBLIC_KEY")
-STRIPE_TEST_SECRET_KEY =env("STRIPE_TEST_SECRET_KEY")
+#STRIPE_TEST_PUBLIC_KEY =env("STRIPE_TEST_PUBLIC_KEY")
+#STRIPE_TEST_SECRET_KEY =env("STRIPE_TEST_SECRET_KEY")
+
+
+STRIPE_TEST_PUBLIC_KEY = os.environ.get("STRIPE_TEST_PUBLIC_KEY",'pk_test_51Ke3hVHJdOtHtnwsMnWowUfvjwvwQlaiZjGe5MQQVhK6elRlClCLphJWrxN6O3PkWMN08mvnbQjpPVgkizExJv7L00Z9YxWoft')
+STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY",'sk_test_51Ke3hVHJdOtHtnwsenSvBtruTbOv3Hb5Se3Eh9OGbA8eKE7OW1mJNcpEIDdIvp57kaWWl7yvkwUbRI0C1CcMCcmF00jIh6vfAg')
+
 STRIPE_LIVE_MODE = False
 
 """
