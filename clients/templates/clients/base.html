@@ -23,8 +23,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 
 
-    <!-- Icon Font Stylesheet
-{#% compress css %#}-->
+    <!-- Icon Font Stylesheet-->
+{% compress css %}
     <link href="{% static 'clients/hot/css/font-awesomem.min.css' %}" rel="stylesheet">
     <link href="{% static 'clients/hot/css/bootstrap-iconsm.css' %}" rel="stylesheet">
     <link href="{% static   'clients/hot/lib/owlcarousel/assets/owl.carouselm.min.css' %}" rel="stylesheet">
@@ -32,7 +32,7 @@
     <link href="{% static 'clients/hot/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'clients/hot/css/style.css'%}" rel="stylesheet">
     
-    {#% endcompress %#}
+    {% endcompress %}
     {% analytical_head_bottom %}
 </head>
 
@@ -109,10 +109,10 @@
                                   My Account
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                  <li><a class="dropdown-item" href="{% url 'dashboard' %}">Dashboard</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'two_factor:profile' %}">Dashboard</a></li>
                                   <li><a class="dropdown-item" href="{#% url 'profile' %#}">Profile</a></li>
                                   <li><a class="dropdown-item" href="#">Settings</a></li>
-                                  <li><a class="dropdown-item" href="{#% url 'logout' %#}">Logout</a></li>
+                                  <li><a class="dropdown-item" href="#">Logout</a></li>
                                   {% endif %}
                                 </ul>
                               </li>

@@ -236,8 +236,7 @@ ACCOUNT_CONFIRM_EMAIL_ON_GET=True
 
 #redirecting Unregister clients back to login if they try to login
 ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL='two_factor:login'
-
-LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_REDIRECT_URL = 'two_factor:profile'
 #login either by email or username
 ACCOUNT_AUTHENTICATION_METHOD =  "username_email"
 #forcing cutomer to login using email
