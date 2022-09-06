@@ -24,7 +24,7 @@ DEBUG = False
 
 #ALLOWED_HOSTS: list[str] = env("ALLOWED_HOSTS")
 #prepare for heroku
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://boiling-earth-35730.herokuapp.com/','127.0.0.1','boiling-earth-35730.herokuapp.com']
 #All apps that are used by the system installed here 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
