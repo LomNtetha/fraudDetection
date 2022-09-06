@@ -85,6 +85,12 @@ To get started please ensure that python 3.8 or above is installed in your syste
 
 install heroku cli and git on you system and create  account on heroku
 
+on project directory
+- create project name
+  ```
+  heroku create
+  ```
+
 - on project directory
   ```
   git add .
@@ -96,10 +102,6 @@ install heroku cli and git on you system and create  account on heroku
  git commit -m "My comments"
  ```
      
-- create project name
-  ```
-  heroku create
-  ```
 
 - Ensure that projet repostory is listed
   ```
