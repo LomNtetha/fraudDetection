@@ -17,7 +17,7 @@ This system was hosted and running on Amazon Elastic Compute Cloud (EC2) instanc
   ```
 - manager site
   ```
-  https://boiling-earth-35730.herokuapp.com/secret
+  https://boiling-earth-35730.herokuapp.com/manager
   ```
 
 ## System Description for Visualization of Data
