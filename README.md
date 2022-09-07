@@ -6,8 +6,8 @@ This is a web-based fraud detection and sales analysing system for an insurance 
 ## project is live and running on heroku
 This system was hosted and running on Amazon Elastic Compute Cloud (EC2) instances and later on Amazon remove it becuase I failed to pay my bills. For now the system is live and running on heroku and on the 28 November Heroku will remove it becuase other free resources such as postgresql which used by this system will be no longer supported.
 ### project Link
-username: test
-password: 1111
+- username: test
+- password: 1111
  please note that test user is super user of the system after login with this creditials you will be granted all system privilages
 - clients site of the system
   
