@@ -45,7 +45,7 @@ django-phonenumber-field==6.1.0
 django-request==1.6.1
 #django-slick-reporting==0.6.3
 git+https://github.com/LomNtetha/django-slick-reporting@features
-git+https://github.com/LomNtetha/django-slick-reporting/tree/features@7335408
+#git+https://github.com/LomNtetha/django-slick-reporting/tree/features@7335408
 django-two-factor-auth==1.13.2
 docker==4.4.4
 docker-compose==1.25.5
