@@ -152,7 +152,7 @@ on project directory
   ```
   heroku open
   ```
-In this stage the project will fail to open becuase it is not yet configuration process are not yet done
+In this stage the project will fail to open becuase configuration process are not yet done,so lets continue.
 
  To use postgresql on heroku we must ensure that postgresql is availble on our heroku oddons 
 
@@ -164,14 +164,7 @@ In this stage the project will fail to open becuase it is not yet configuration 
   ```
   heroku addons:open heroku-postgresql
   ```
-- open postgresql oddons
-  ```
-  heroku addons:open heroku-postgresql
-  ```
-- open postgresql oddons
-  ```
-  heroku addons:open heroku-postgresql
-  ```
+
 - check configarion variables. we must configure our secret keys so that they can not be exposed to hackers
 - this command will list all secret keys and our variables that are configured
   ```
@@ -186,7 +179,7 @@ In this stage the project will fail to open becuase it is not yet configuration 
   heroku config:set DJANGO_DEBUG=False
   ```
 - go to your settings and change allow host to something like this please use your own heroku app name
-ALLOWED_HOSTS = ['https://boiling-earth-35730.herokuapp.com/',boiling-earth-35730.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['https://boiling-earth-35730.herokuapp.com/','boiling-earth-35730.herokuapp.com', '127.0.0.1']
 
 -Then save your settings and commit them to your GitHub repository and to Heroku:
 
