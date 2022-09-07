@@ -81,7 +81,10 @@ To get started please ensure that python 3.8 or above is installed in your syste
   ```
   pip install -r requirements.txt
   ```
-
+- Apply any migrations mistakenngly unapplied
+  ```
+  python manage.py makemigrations
+  ```
 - migrate Database
   ```
   python manage.py migrate
@@ -92,11 +95,18 @@ To get started please ensure that python 3.8 or above is installed in your syste
   python manage.py createsuperuser
   ```
 
+- Collect static folder
+  ```
+  python manage.py collectstatic
+  ```
+- Compress the static folder for betterment of website perfotmance
+  ```
+  python manage.py compress --force
+  ```
 - run the project
   ```
   python manage.py runserver
   ```
-
 ## How to push the project on cloud Heroku PAAS
 
 install heroku cli and git on you system and create  account on heroku
