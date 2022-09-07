@@ -3,6 +3,22 @@ This is a machine learning and django based system
 
 This is a web-based fraud detection and sales analysing system for an insurance companies that has three main modules which are Client, Sales support and manager,i developed this system while I was doing my final year at the university. First of all, before I train and test algorithm models to detect fraud, I analyze the datasets following CRISP-DM techniques.
 
+## project is live and running on heroku
+This system was hosted and running on Amazon Elastic Compute Cloud (EC2) instances and later on Amazon remove it becuase I failed to pay my bills. For now the system is live and running on heroku and on the 28 November Heroku will remove it becuase other free resources such as postgresql which used by this system will be no longer supported.
+### project Link
+
+- clients site of the system
+  ```
+  https://boiling-earth-35730.herokuapp.com/
+  ```
+- sales support site
+  ```
+  https://boiling-earth-35730.herokuapp.com/secret
+  ```
+- manager site
+  ```
+  https://boiling-earth-35730.herokuapp.com/secret
+  ```
 
 ## System Description for Visualization of Data
 
@@ -30,7 +46,7 @@ My goal is to build a fully functioning system that will allow clients to subscr
 
 My recommendation to everyone in the field of analysing data from large Datasets is to follow CRISP-DM  Techniques while working with large and complicated datasets.
 
-## project is live and running on heroku
+## How to Run Project locally
 
 To get started please ensure that python 3.8 or above is installed in your system
 
