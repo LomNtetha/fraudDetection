@@ -6,19 +6,21 @@ This is a web-based fraud detection and sales analysing system for an insurance 
 ## project is live and running on heroku
 This system was hosted and running on Amazon Elastic Compute Cloud (EC2) instances and later on Amazon remove it becuase I failed to pay my bills. For now the system is live and running on heroku and on the 28 November Heroku will remove it becuase other free resources such as postgresql which used by this system will be no longer supported.
 ### project Link
-
+username: test
+password: 1111
+ please note that test user is super user of the system after login with this creditials you will be granted all system privilages
 - clients site of the system
-  ```
+  
   https://boiling-earth-35730.herokuapp.com/
-  ```
+  
 - sales support site
-  ```
+  
   https://boiling-earth-35730.herokuapp.com/secret
-  ```
+
 - manager site
-  ```
+  
   https://boiling-earth-35730.herokuapp.com/manager
-  ```
+  
 
 ## System Description for Visualization of Data
 
@@ -26,7 +28,7 @@ While working with the dataset, I used  Matplotlib, tabulate and Seaborn to visu
 
 ## Transparency of Data
 
-The fraud detection part of the system is specifically detecting whether the claim is fraudulent or legitimate while the client claiming for their benefits during an incident. So far the system was enabled to detect whether the claim is fraudulent or legitimate and report or revealed it to the sales support team of the insurance. 
+The fraud detection part of the system is specifically detecting whether the claim is fraudulent or legitimate while the client claiming for their benefits during an incident. So far the system is enabled to detect whether the claim is fraudulent or legitimate and report or revealed it to the sales support team of the insurance. 
 
 ## Main Working Functionality of the System
 
@@ -35,7 +37,7 @@ The fraud detection part of the system is specifically detecting whether the cla
 - Subscribing for policy and payements with Stripe
 - Make claims online 
 - fraud Detection
-- policy sales analysis and visualing of them inbarcharts and piecharts
+- policy sales analysis and visualizing of them in barcharts and piecharts
 
 
 
@@ -109,27 +111,25 @@ To get started please ensure that python 3.8 or above is installed in your syste
   ```
 ## How to push the project on cloud Heroku PAAS
 
-install heroku cli and git on you system and create  account on heroku
+Ensure that  heroku cli and git are installed on your system
 
 on project directory
-- create project name
+- Run The following command and heroku will automatically create project name for you
   ```
   heroku create
   ```
 
-- on project directory
+- add all files you need to pust to Heroku
   ```
   git add .
   ```
 
-  
-- commit changes
+- commit changes with some comments
  ```
  git commit -m "My comments"
  ```
      
-
-- Ensure that projet repostory is listed
+- Ensure that new heroku projet repostory link  are listed (they will be 4 links including of github)
   ```
   git remote -v
   ```
@@ -152,7 +152,42 @@ on project directory
   ```
   heroku open
   ```
+ To use postgresql on heroku we must ensure that postgresql is availble on our heroku oddons 
+
+ - run the command below , it will list oddons available including heroku-postgresql
+  ```
+   heroku addons
+  ```
+- open postgresql oddons
+  ```
+  heroku addons:open heroku-postgresql
+  ```
+- open postgresql oddons
+  ```
+  heroku addons:open heroku-postgresql
+  ```
+- open postgresql oddons
+  ```
+  heroku addons:open heroku-postgresql
+  ```
+- check configarion variables. we must configure our secret keys so that they can not be exposed to hackers
+- this command will list all secret keys and our variables that are configured
+  ```
+  heroku config
+  ```
+- then set all of your variables secret keys like this:
+ ```
+  heroku config:set DJANGO_SECRET_KEY="pleaseenteryourowndjangosecretkey"
+  ```
+- Then set for debug to false
+  ```
+  heroku config:set DJANGO_DEBUG=False
+  ```
+- go to your settings and change allow host to something like this please use your own heroku app name
+ALLOWED_HOSTS = ['https://boiling-earth-35730.herokuapp.com/',boiling-earth-35730.herokuapp.com', '127.0.0.1']
+
+-Then save your settings and commit them to your GitHub repository and to Heroku:
 
 
- 
+
 
