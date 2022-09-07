@@ -110,8 +110,8 @@ def checkout_session(request,plan_id):
         }],
         mode='payment',
 
-        success_url='http://127.0.0.1:8000/pay_success?session_id={CHECKOUT_SESSION_ID}',
-        cancel_url='http://127.0.0.1:8000/pay_cancel',
+        success_url='https://boiling-earth-35730.herokuapp.com/pay_success?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url='https://boiling-earth-35730.herokuapp.com/pay_cancel',
         client_reference_id=plan_id
     )
     return redirect(session.url, code=303)
@@ -191,7 +191,10 @@ def predict_chances(request):
         Year = int(request.POST.get('Year'))
 
         #unpickle data
-        clf_dt1 = pd.read_pickle(r"/home/lumkile/django-projects/insurance/fraudDetection/clients/fraud_model.pickle")
+
+        #clf_dt1 = pd.read_pickle(r"/home/lumkile/django-projects/insurance/fraudDetection/clients/fraud_model.pickle")
+        #for herokuapp 
+        clf_dt1 = pd.read_pickle(r"/app/clients/fraud_model.pickle")
 
         #make predictions
         result = clf_dt1.predict([[Month, WeekOfMonth, DayOfWeek, Make, AccidentArea, DayOfWeekClaimed, MonthClaimed, WeekOfMonthClaimed, Sex, MaritalStatus, Age, Fault, PolicyType, VehicleCategory, VehiclePrice, PolicyNumber, RepNumber, Deductible, DriverRating, Days_Policy_Accident, AgeOfVehicle, PoliceReportFiled, WitnessPresent, AgentType, NumberOfCars, Year]])
