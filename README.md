@@ -152,6 +152,8 @@ on project directory
   ```
   heroku open
   ```
+In this stage the project will fail to open becuase it is not yet configuration process are not yet done
+
  To use postgresql on heroku we must ensure that postgresql is availble on our heroku oddons 
 
  - run the command below , it will list oddons available including heroku-postgresql
