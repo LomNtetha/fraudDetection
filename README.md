@@ -1,4 +1,4 @@
-# Fraud Detection and Analysis System
+# Fraud Detection and Sales Analysis System
 This is a machine learning and django based system 
 
 This is a web-based fraud detection and sales analysing system for an insurance companies that has three main modules which are Client, Sales support and manager,i developed this system while I was doing my final year at the university. First of all, before I train and test algorithm models to detect fraud, I analyze the datasets following CRISP-DM techniques.
