@@ -109,6 +109,12 @@ To get started please ensure that python 3.8 or above is installed in your syste
   ```
   python manage.py runserver
   ```
+## How to run  jupyter nootebook script
+- You can install anaconda on your system that has both jupyter notebook and jupyter lab environments
+- you can use jupyter nootebook python shell with django by run this command
+ ```
+ python manage.py shell_plus --notebook
+ ```
 ## How to push the project on cloud Heroku PAAS
 
 Ensure that  heroku cli and git are installed on your system
