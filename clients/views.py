@@ -190,11 +190,13 @@ def predict_chances(request):
         NumberOfCars = int(request.POST.get('NumberOfCars'))
         Year = int(request.POST.get('Year'))
 
-        #unpickle data
+        #unpickle data from jupyter nootebook
 
-        #clf_dt1 = pd.read_pickle(r"/home/lumkile/django-projects/insurance/fraudDetection/clients/fraud_model.pickle")
         #for herokuapp 
-        clf_dt1 = pd.read_pickle(r"/app/clients/fraud_model.pickle")
+        #clf_dt1 = pd.read_pickle(r"/app/clients/fraud_model.pickle")
+        # for local application
+        clf_dt1 = pd.read_pickle(r"/home/lumkile/django-projects/insurance/fraudDetection/clients/fraud_model.pickle")
+        
 
         #make predictions
         result = clf_dt1.predict([[Month, WeekOfMonth, DayOfWeek, Make, AccidentArea, DayOfWeekClaimed, MonthClaimed, WeekOfMonthClaimed, Sex, MaritalStatus, Age, Fault, PolicyType, VehicleCategory, VehiclePrice, PolicyNumber, RepNumber, Deductible, DriverRating, Days_Policy_Accident, AgeOfVehicle, PoliceReportFiled, WitnessPresent, AgentType, NumberOfCars, Year]])
