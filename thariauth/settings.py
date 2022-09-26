@@ -54,8 +54,9 @@ INSTALLED_APPS = [
  #'channels_redi
   'admin_honeypot',
  #'django-cryptography',
-  'import_export',
-   'compressor',
+ 'import_export',
+ 'compressor',
+ 'django_extensions',
 ] 
 SITE_ID=1   
 
